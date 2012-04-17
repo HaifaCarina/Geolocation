@@ -29,6 +29,7 @@
     // Add filter options tab
     NSArray *itemArray = [NSArray arrayWithObjects: @"Distance", @"Star Rating", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
+    [segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
     segmentedControl.frame = CGRectMake(0, 00, 150, 30);
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.selectedSegmentIndex = 0;
@@ -58,6 +59,38 @@
     NSLog(@"options");
 }
 
+- (void) segmentedControlAction: (UISegmentedControl *)segmentedControl {
+    
+    NSArray *sortedArray;
+    
+    if ([segmentedControl selectedSegmentIndex] == 0) 
+    {
+        NSLog(@"customSwitch is DIST");
+		
+        sortedArray = [records sortedArrayUsingComparator:^(id a, id b) 
+        {
+            NSString *first = [(Records*)a distance];
+            NSString *second = [(Records*)b distance];
+            return [first compare:second];
+        }];
+        
+        records = [(NSArray*)sortedArray mutableCopy];
+        [mainTableView reloadData];        
+	} else 
+    {
+		NSLog(@"customSwitch is STAR");
+		
+        sortedArray = [records sortedArrayUsingComparator:^(id a, id b) 
+        {
+            NSString *first = [(Records*)a starRating];
+            NSString *second = [(Records*)b starRating];
+            return [second compare:first];
+        }];
+        
+        records = [(NSArray*)sortedArray mutableCopy];
+        [mainTableView reloadData];
+	}
+}
 - (void) startConnection 
 {
 	// Display loading icon

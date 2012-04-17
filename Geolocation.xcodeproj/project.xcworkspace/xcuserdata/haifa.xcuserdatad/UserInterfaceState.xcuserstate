@@ -3445,9 +3445,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356340665.67332101</real>
-		<string>{6095, 2200}</string>
-		<string>{7397, 0}</string>
+		<real>356341834.69049102</real>
+		<string>{7314, 2073}</string>
+		<string>{2567, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4813,7 +4813,7 @@
 				<integer>420</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>356340608.56856</real>
+			<real>356341725.19647503</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -4824,7 +4824,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 3:30 PM</string>
+		<string>Today at 3:48 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -5235,7 +5235,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>14</integer>
+					<integer>124</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -5924,10 +5924,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356340665.675843</real>
-		<string>{6095, 2200}</string>
-		<string>{7397, 0}</string>
-		<string>-tableView:cellForRowAtIndexPath:</string>
+		<real>356341834.69284397</real>
+		<string>{7314, 2073}</string>
+		<string>{2567, 0}</string>
+		<string>-segmentedControlAction:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
@@ -5961,7 +5961,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {1179, 774}}</string>
+		<string>{{0, 0}, {1179, 638}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
