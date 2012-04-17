@@ -10,7 +10,7 @@
 
 @implementation GeolocationAppDelegate
 
-@synthesize viewController, navController;
+@synthesize viewController;
 @synthesize window=_window;
 
 @synthesize managedObjectContext=__managedObjectContext;
@@ -22,8 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     viewController = [[RootViewController alloc]init];
-    navController = [[UINavigationController alloc]initWithRootViewController:viewController];
-    [self.window addSubview:navController.view];
+    
+    [self.window addSubview:viewController.view];
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;

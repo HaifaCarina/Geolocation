@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "GlobalData.h"
+#import "Records.h"
+#import "JSON.h"
 #import "DetailViewController.h"
 
-@interface AllViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    
+@interface AllViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate> {
+    NSMutableString *jsonData;
+    NSMutableArray *records;
+	UITableView *mainTableView;
+	CLLocationManager *locationManager;
+    BOOL calledOnce;
+	NSMutableString *currentCoordinatesString;
+    NSMutableString *currentLocation;
+	UIActivityIndicatorView *myIndicator;
+    UIFont *cellFont;
 }
 
 @end

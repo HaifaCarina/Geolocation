@@ -12,6 +12,7 @@
 #import "ShopViewController.h"
 #import "SightseeingViewController.h"
 #import "BarViewController.h"
+#import "DetailViewController.h"
 
 @interface RootViewController : UIViewController  <UITabBarControllerDelegate> {
     

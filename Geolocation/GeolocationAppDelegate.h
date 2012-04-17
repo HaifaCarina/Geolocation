@@ -10,13 +10,10 @@
 #import "RootViewController.h"
 @interface GeolocationAppDelegate : NSObject <UIApplicationDelegate> {
     RootViewController *viewController;
-    UINavigationController *navController;
-
 }
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) RootViewController *viewController;
-@property (nonatomic, retain) UIViewController *navController;
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
