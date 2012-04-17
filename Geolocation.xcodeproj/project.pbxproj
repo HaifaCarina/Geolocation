@@ -38,6 +38,11 @@
 		A51633AE153D480700813C89 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633A7153D480700813C89 /* SBJsonBase.m */; };
 		A51633AF153D480700813C89 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633A9153D480700813C89 /* SBJsonParser.m */; };
 		A51633B0153D480700813C89 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633AB153D480700813C89 /* SBJsonWriter.m */; };
+		A51633BE153D676800813C89 /* NVPolylineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633BB153D676800813C89 /* NVPolylineAnnotation.m */; };
+		A51633BF153D676800813C89 /* NVPolylineAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633BD153D676800813C89 /* NVPolylineAnnotationView.m */; };
+		A51633C2153D678100813C89 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C1153D678000813C89 /* RouteViewController.m */; };
+		A51633C8153D681D00813C89 /* DDAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C5153D681D00813C89 /* DDAnnotation.m */; };
+		A51633C9153D681D00813C89 /* DDAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C7153D681D00813C89 /* DDAnnotationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +97,16 @@
 		A51633A9153D480700813C89 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		A51633AA153D480700813C89 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		A51633AB153D480700813C89 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		A51633BA153D676800813C89 /* NVPolylineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPolylineAnnotation.h; sourceTree = "<group>"; };
+		A51633BB153D676800813C89 /* NVPolylineAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPolylineAnnotation.m; sourceTree = "<group>"; };
+		A51633BC153D676800813C89 /* NVPolylineAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVPolylineAnnotationView.h; sourceTree = "<group>"; };
+		A51633BD153D676800813C89 /* NVPolylineAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVPolylineAnnotationView.m; sourceTree = "<group>"; };
+		A51633C0153D678000813C89 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
+		A51633C1153D678000813C89 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
+		A51633C4153D681D00813C89 /* DDAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAnnotation.h; sourceTree = "<group>"; };
+		A51633C5153D681D00813C89 /* DDAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAnnotation.m; sourceTree = "<group>"; };
+		A51633C6153D681D00813C89 /* DDAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAnnotationView.h; sourceTree = "<group>"; };
+		A51633C7153D681D00813C89 /* DDAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAnnotationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +162,8 @@
 		A5089B04153D1A9900865F53 /* Geolocation */ = {
 			isa = PBXGroup;
 			children = (
+				A51633C3153D681C00813C89 /* DDAnnotation */,
+				A51633B9153D676800813C89 /* NVPolyline */,
 				A51633A0153D480700813C89 /* JSON */,
 				A516339C153D477200813C89 /* Records */,
 				A5163398153D471700813C89 /* GlobalData */,
@@ -166,6 +183,8 @@
 				A5163362153D1EDE00813C89 /* BarViewController.m */,
 				A5163375153D263800813C89 /* DetailViewController.h */,
 				A5163376153D263800813C89 /* DetailViewController.m */,
+				A51633C0153D678000813C89 /* RouteViewController.h */,
+				A51633C1153D678000813C89 /* RouteViewController.m */,
 				A5089B10153D1A9900865F53 /* MainWindow.xib */,
 				A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */,
 				A5089B05153D1A9900865F53 /* Supporting Files */,
@@ -231,6 +250,28 @@
 				A51633AB153D480700813C89 /* SBJsonWriter.m */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		A51633B9153D676800813C89 /* NVPolyline */ = {
+			isa = PBXGroup;
+			children = (
+				A51633BA153D676800813C89 /* NVPolylineAnnotation.h */,
+				A51633BB153D676800813C89 /* NVPolylineAnnotation.m */,
+				A51633BC153D676800813C89 /* NVPolylineAnnotationView.h */,
+				A51633BD153D676800813C89 /* NVPolylineAnnotationView.m */,
+			);
+			path = NVPolyline;
+			sourceTree = "<group>";
+		};
+		A51633C3153D681C00813C89 /* DDAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				A51633C4153D681D00813C89 /* DDAnnotation.h */,
+				A51633C5153D681D00813C89 /* DDAnnotation.m */,
+				A51633C6153D681D00813C89 /* DDAnnotationView.h */,
+				A51633C7153D681D00813C89 /* DDAnnotationView.m */,
+			);
+			path = DDAnnotation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +358,11 @@
 				A51633AE153D480700813C89 /* SBJsonBase.m in Sources */,
 				A51633AF153D480700813C89 /* SBJsonParser.m in Sources */,
 				A51633B0153D480700813C89 /* SBJsonWriter.m in Sources */,
+				A51633BE153D676800813C89 /* NVPolylineAnnotation.m in Sources */,
+				A51633BF153D676800813C89 /* NVPolylineAnnotationView.m in Sources */,
+				A51633C2153D678100813C89 /* RouteViewController.m in Sources */,
+				A51633C8153D681D00813C89 /* DDAnnotation.m in Sources */,
+				A51633C9153D681D00813C89 /* DDAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

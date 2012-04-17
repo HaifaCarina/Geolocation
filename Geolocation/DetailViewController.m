@@ -12,11 +12,11 @@
 @implementation DetailViewController
 @synthesize record, details;
 
-
+#pragma mark -
+#pragma mark Life Cycle methods
 - (id) initWithRecord:(id)inputRecord {
     if (self == [super init]) {
         record = inputRecord;
-        NSLog(@"%@", record.name);
     }
     return(self);
 }
@@ -55,17 +55,15 @@
 	route.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
 	[self.view addSubview:route];
     
-	NSLog(@"DetailViewController called");
 }
 
+#pragma mark -
+#pragma mark Custom methods
 - (void) routeMethod: (id) button {
 	
-	NSLog(@"button is pressed");
-	NSLog(@"%@", coordinates);
-	/*RouteViewController *aController = [[RouteViewController alloc] init];
-	[aController setCoordinates:coordinates];
+    RouteViewController *aController = [[RouteViewController alloc] initWithCoordinates:coordinates];
 	[self.navigationController pushViewController:aController animated:YES];
 	[aController release];
-     */
+    
 }
 @end

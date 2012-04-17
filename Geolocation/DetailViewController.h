@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Records.h"
+#import "RouteViewController.h"
 
 @interface DetailViewController : UIViewController {
     NSMutableArray *details;
