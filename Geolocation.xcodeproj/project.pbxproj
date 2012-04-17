@@ -43,6 +43,7 @@
 		A51633C2153D678100813C89 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C1153D678000813C89 /* RouteViewController.m */; };
 		A51633C8153D681D00813C89 /* DDAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C5153D681D00813C89 /* DDAnnotation.m */; };
 		A51633C9153D681D00813C89 /* DDAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C7153D681D00813C89 /* DDAnnotationView.m */; };
+		A51633D4153D733200813C89 /* FilterDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633D3153D733200813C89 /* FilterDistanceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		A51633C5153D681D00813C89 /* DDAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAnnotation.m; sourceTree = "<group>"; };
 		A51633C6153D681D00813C89 /* DDAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAnnotationView.h; sourceTree = "<group>"; };
 		A51633C7153D681D00813C89 /* DDAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAnnotationView.m; sourceTree = "<group>"; };
+		A51633D2153D733200813C89 /* FilterDistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDistanceViewController.h; sourceTree = "<group>"; };
+		A51633D3153D733200813C89 /* FilterDistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDistanceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 				A5163376153D263800813C89 /* DetailViewController.m */,
 				A51633C0153D678000813C89 /* RouteViewController.h */,
 				A51633C1153D678000813C89 /* RouteViewController.m */,
+				A51633D2153D733200813C89 /* FilterDistanceViewController.h */,
+				A51633D3153D733200813C89 /* FilterDistanceViewController.m */,
 				A5089B10153D1A9900865F53 /* MainWindow.xib */,
 				A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */,
 				A5089B05153D1A9900865F53 /* Supporting Files */,
@@ -363,6 +368,7 @@
 				A51633C2153D678100813C89 /* RouteViewController.m in Sources */,
 				A51633C8153D681D00813C89 /* DDAnnotation.m in Sources */,
 				A51633C9153D681D00813C89 /* DDAnnotationView.m in Sources */,
+				A51633D4153D733200813C89 /* FilterDistanceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

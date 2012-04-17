@@ -51,12 +51,50 @@
     cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     
 }
+- (void) viewWillAppear:(BOOL)animated {
+    
+    if ([[GlobalData sharedGlobalData].distance compare: [NSNumber numberWithDouble:0.00]] == NSOrderedDescending) {
+        [records setArray:[GlobalData sharedGlobalData].records];
+        
+        NSMutableArray *discardedObjects = [[NSMutableArray alloc]init];
+        NSMutableArray *keepObjects = [[NSMutableArray alloc]init];
+        
+        for (id i in records) {
+            NSString *distanceString = [[i getDistance]stringByReplacingOccurrencesOfString:@" mi" withString:@""];
+            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+            [f setRoundingIncrement:[NSNumber numberWithDouble:0.00000]];
+            NSNumber * d1 = [f numberFromString:distanceString];
+            [f release];
+            if ([d1 compare:[GlobalData sharedGlobalData].distance] == NSOrderedDescending) { //d1  > d2
+                [discardedObjects addObject:i];
+            } else {
+                [keepObjects addObject:i];
+            }
+        }
+        
+        [records setArray:keepObjects];
+        [keepObjects release];
+        [discardedObjects release];
+        
+    }
+	[mainTableView reloadData];
+}
 
 #pragma mark -
 #pragma mark Custom methods
 - (void) optionsAction 
 {
     NSLog(@"options");
+    UIActionSheet *optionsAlert = [[UIActionSheet alloc] initWithTitle:@"Select option:"
+                                                              delegate:self cancelButtonTitle:@"Cancel"
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:	@"Filter Distance",
+                                   @"Create New Entry",
+                                   nil,
+                                   nil];
+    optionsAlert.actionSheetStyle = self.navigationController.navigationBar.barStyle;
+	[optionsAlert showInView:self.parentViewController.tabBarController.view];
+    [optionsAlert release];
 }
 
 - (void) segmentedControlAction: (UISegmentedControl *)segmentedControl {
@@ -203,7 +241,33 @@
 	[self.view addSubview:mainTableView];
 	
 }
+#pragma mark -
+#pragma mark UIActionSheetDelegate
 
+- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Change the navigation bar style, also make the status bar match with it
+	switch (buttonIndex)
+	{
+		case 0:
+		{
+			FilterDistanceViewController *aController = [[FilterDistanceViewController alloc]init];
+            [self.navigationController pushViewController:aController animated:YES];
+            [aController release];
+			break;
+		}
+		case 1:
+		{
+			/*NewRecordViewController *aController = [[NewRecordViewController alloc] init];
+            [self.navigationController pushViewController:aController animated:YES];
+            [aController release];
+            */
+            
+            break;
+		}
+            
+	}
+}
 #pragma mark -
 #pragma mark Table view methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 

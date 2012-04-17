@@ -12,8 +12,9 @@
 #import "Records.h"
 #import "JSON.h"
 #import "DetailViewController.h"
+#import "FilterDistanceViewController.h"
 
-@interface AllViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate> {
+@interface AllViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate> {
     NSMutableString *jsonData;
     NSMutableArray *records;
 	UITableView *mainTableView;

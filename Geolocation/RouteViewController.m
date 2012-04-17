@@ -201,8 +201,6 @@
 #pragma mark MKAnnotationView methods
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation 
 {
-	NSString *c = [NSString stringWithFormat:@"%f,%f",annotation.coordinate.latitude, annotation.coordinate.longitude];
-
 	if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;		
 	}
