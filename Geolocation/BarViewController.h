@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface BarViewController : UIViewController {
+@interface BarViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>{
     
 }
 

@@ -13,7 +13,7 @@
 #import "SightseeingViewController.h"
 #import "BarViewController.h"
 
-@interface RootViewController : UIViewController  {
+@interface RootViewController : UIViewController  <UITabBarControllerDelegate> {
     
 }
 

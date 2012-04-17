@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FoodViewController : UIViewController {
+@interface FoodViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>{
     
 }
 

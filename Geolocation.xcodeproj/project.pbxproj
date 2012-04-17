@@ -27,6 +27,7 @@
 		A516336C153D1FFB00813C89 /* icon-shop.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163367153D1FFB00813C89 /* icon-shop.png */; };
 		A516336D153D1FFB00813C89 /* icon-sightseeing.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163368153D1FFB00813C89 /* icon-sightseeing.png */; };
 		A516336E153D1FFB00813C89 /* juno.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163369153D1FFB00813C89 /* juno.png */; };
+		A5163377153D263800813C89 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5163376153D263800813C89 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		A5163367153D1FFB00813C89 /* icon-shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-shop.png"; sourceTree = "<group>"; };
 		A5163368153D1FFB00813C89 /* icon-sightseeing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sightseeing.png"; sourceTree = "<group>"; };
 		A5163369153D1FFB00813C89 /* juno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juno.png; sourceTree = "<group>"; };
+		A5163375153D263800813C89 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		A5163376153D263800813C89 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				A516335F153D1EBC00813C89 /* SightseeingViewController.m */,
 				A5163361153D1EDE00813C89 /* BarViewController.h */,
 				A5163362153D1EDE00813C89 /* BarViewController.m */,
+				A5163375153D263800813C89 /* DetailViewController.h */,
+				A5163376153D263800813C89 /* DetailViewController.m */,
 				A5089B10153D1A9900865F53 /* MainWindow.xib */,
 				A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */,
 				A5089B05153D1A9900865F53 /* Supporting Files */,
@@ -229,6 +234,7 @@
 				A516335D153D1E9A00813C89 /* ShopViewController.m in Sources */,
 				A5163360153D1EBC00813C89 /* SightseeingViewController.m in Sources */,
 				A5163363153D1EDE00813C89 /* BarViewController.m in Sources */,
+				A5163377153D263800813C89 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

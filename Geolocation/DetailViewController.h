@@ -1,5 +1,5 @@
 //
-//  ShopViewController.h
+//  DetailViewController.h
 //  Geolocation
 //
 //  Created by Haifa Carina Baluyos on 4/17/12.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ShopViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>{
+@interface DetailViewController : UIViewController {
     
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SightseeingViewController : UIViewController {
+@interface SightseeingViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>{
     
 }
 
