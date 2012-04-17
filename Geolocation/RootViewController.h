@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AllViewController.h"
+#import "FoodViewController.h"
+#import "ShopViewController.h"
+#import "SightseeingViewController.h"
+#import "BarViewController.h"
 
 @interface RootViewController : UIViewController  {
     

@@ -17,6 +17,16 @@
 		A5089B12153D1A9900865F53 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5089B10153D1A9900865F53 /* MainWindow.xib */; };
 		A5089B15153D1A9900865F53 /* Geolocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */; };
 		A5089B1D153D1AB100865F53 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5089B1C153D1AB100865F53 /* RootViewController.m */; };
+		A5163356153D1E3E00813C89 /* AllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5163355153D1E3E00813C89 /* AllViewController.m */; };
+		A516335A153D1E6E00813C89 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5163359153D1E6E00813C89 /* FoodViewController.m */; };
+		A516335D153D1E9A00813C89 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A516335C153D1E9A00813C89 /* ShopViewController.m */; };
+		A5163360153D1EBC00813C89 /* SightseeingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A516335F153D1EBC00813C89 /* SightseeingViewController.m */; };
+		A5163363153D1EDE00813C89 /* BarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5163362153D1EDE00813C89 /* BarViewController.m */; };
+		A516336A153D1FFB00813C89 /* icon-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163365153D1FFB00813C89 /* icon-bar.png */; };
+		A516336B153D1FFB00813C89 /* icon-food.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163366153D1FFB00813C89 /* icon-food.png */; };
+		A516336C153D1FFB00813C89 /* icon-shop.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163367153D1FFB00813C89 /* icon-shop.png */; };
+		A516336D153D1FFB00813C89 /* icon-sightseeing.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163368153D1FFB00813C89 /* icon-sightseeing.png */; };
+		A516336E153D1FFB00813C89 /* juno.png in Resources */ = {isa = PBXBuildFile; fileRef = A5163369153D1FFB00813C89 /* juno.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +45,21 @@
 		A5089B14153D1A9900865F53 /* Geolocation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Geolocation.xcdatamodel; sourceTree = "<group>"; };
 		A5089B1B153D1AB100865F53 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		A5089B1C153D1AB100865F53 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		A5163354153D1E3D00813C89 /* AllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllViewController.h; sourceTree = "<group>"; };
+		A5163355153D1E3E00813C89 /* AllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllViewController.m; sourceTree = "<group>"; };
+		A5163358153D1E6E00813C89 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
+		A5163359153D1E6E00813C89 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
+		A516335B153D1E9A00813C89 /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		A516335C153D1E9A00813C89 /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		A516335E153D1EBC00813C89 /* SightseeingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightseeingViewController.h; sourceTree = "<group>"; };
+		A516335F153D1EBC00813C89 /* SightseeingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightseeingViewController.m; sourceTree = "<group>"; };
+		A5163361153D1EDE00813C89 /* BarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarViewController.h; sourceTree = "<group>"; };
+		A5163362153D1EDE00813C89 /* BarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarViewController.m; sourceTree = "<group>"; };
+		A5163365153D1FFB00813C89 /* icon-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-bar.png"; sourceTree = "<group>"; };
+		A5163366153D1FFB00813C89 /* icon-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-food.png"; sourceTree = "<group>"; };
+		A5163367153D1FFB00813C89 /* icon-shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-shop.png"; sourceTree = "<group>"; };
+		A5163368153D1FFB00813C89 /* icon-sightseeing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-sightseeing.png"; sourceTree = "<group>"; };
+		A5163369153D1FFB00813C89 /* juno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juno.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +112,16 @@
 				A5089B0E153D1A9900865F53 /* GeolocationAppDelegate.m */,
 				A5089B1B153D1AB100865F53 /* RootViewController.h */,
 				A5089B1C153D1AB100865F53 /* RootViewController.m */,
+				A5163354153D1E3D00813C89 /* AllViewController.h */,
+				A5163355153D1E3E00813C89 /* AllViewController.m */,
+				A5163358153D1E6E00813C89 /* FoodViewController.h */,
+				A5163359153D1E6E00813C89 /* FoodViewController.m */,
+				A516335B153D1E9A00813C89 /* ShopViewController.h */,
+				A516335C153D1E9A00813C89 /* ShopViewController.m */,
+				A516335E153D1EBC00813C89 /* SightseeingViewController.h */,
+				A516335F153D1EBC00813C89 /* SightseeingViewController.m */,
+				A5163361153D1EDE00813C89 /* BarViewController.h */,
+				A5163362153D1EDE00813C89 /* BarViewController.m */,
 				A5089B10153D1A9900865F53 /* MainWindow.xib */,
 				A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */,
 				A5089B05153D1A9900865F53 /* Supporting Files */,
@@ -97,12 +132,25 @@
 		A5089B05153D1A9900865F53 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5163364153D1FFB00813C89 /* images */,
 				A5089B06153D1A9900865F53 /* Geolocation-Info.plist */,
 				A5089B07153D1A9900865F53 /* InfoPlist.strings */,
 				A5089B0A153D1A9900865F53 /* Geolocation-Prefix.pch */,
 				A5089B0B153D1A9900865F53 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5163364153D1FFB00813C89 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A5163365153D1FFB00813C89 /* icon-bar.png */,
+				A5163366153D1FFB00813C89 /* icon-food.png */,
+				A5163367153D1FFB00813C89 /* icon-shop.png */,
+				A5163368153D1FFB00813C89 /* icon-sightseeing.png */,
+				A5163369153D1FFB00813C89 /* juno.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +205,11 @@
 			files = (
 				A5089B09153D1A9900865F53 /* InfoPlist.strings in Resources */,
 				A5089B12153D1A9900865F53 /* MainWindow.xib in Resources */,
+				A516336A153D1FFB00813C89 /* icon-bar.png in Resources */,
+				A516336B153D1FFB00813C89 /* icon-food.png in Resources */,
+				A516336C153D1FFB00813C89 /* icon-shop.png in Resources */,
+				A516336D153D1FFB00813C89 /* icon-sightseeing.png in Resources */,
+				A516336E153D1FFB00813C89 /* juno.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +224,11 @@
 				A5089B0F153D1A9900865F53 /* GeolocationAppDelegate.m in Sources */,
 				A5089B15153D1A9900865F53 /* Geolocation.xcdatamodeld in Sources */,
 				A5089B1D153D1AB100865F53 /* RootViewController.m in Sources */,
+				A5163356153D1E3E00813C89 /* AllViewController.m in Sources */,
+				A516335A153D1E6E00813C89 /* FoodViewController.m in Sources */,
+				A516335D153D1E9A00813C89 /* ShopViewController.m in Sources */,
+				A5163360153D1EBC00813C89 /* SightseeingViewController.m in Sources */,
+				A5163363153D1EDE00813C89 /* BarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +333,7 @@
 				A5089B1A153D1A9900865F53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
