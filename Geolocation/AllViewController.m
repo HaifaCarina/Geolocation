@@ -125,7 +125,7 @@
     {
         NSString *s =[NSString stringWithFormat:@"%g,%g",newLocation.coordinate.latitude,newLocation.coordinate.longitude];
         [currentCoordinatesString appendString: s];
-        
+        NSLog(@"%@", s);
         NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=14.558808,121.022911&sensor=true", currentCoordinatesString];
         NSURL *url = [NSURL URLWithString:urlString];
         NSString *content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
@@ -208,28 +208,58 @@
 #pragma mark Table view methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 { 
-    return [records count];
+    if (section == 0) {
+		return 1;
+	} else if (section == 1) {
+		return [records count];
+	}
+    
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellText = [[records	objectAtIndex:indexPath.row] getName] ;
-    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    return labelSize.height + 80;
+    switch (indexPath.section) {
+        case 0: 
+        {
+            return 50;
+			break;
+        }	
+		case 1: 
+        {
+            NSString *cellText = [[records	objectAtIndex:indexPath.row] getName] ;
+            CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+            CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+            return labelSize.height + 80;
+            break;
+        }
+            
+	}
+    return 50;
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    static NSString *CellIdentifier = @"Cell"; 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //static NSString *CellIdentifier = @"Cell"; 
+    
+    static NSString *CellIdentifier;
 	
+	switch (indexPath.section) {
+        case 0: 
+			CellIdentifier = @"Location"; 
+			break;
+		case 1:
+			CellIdentifier = @"Records"; 
+			break;
+	}
+    
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) 
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
@@ -238,24 +268,48 @@
         cell.textLabel.font = cellFont;
         cell.detailTextLabel.numberOfLines = 3;
     }
-	
-	// Set up the cell
-    cell.textLabel.text = [[records	objectAtIndex:indexPath.row] getName];
-    
-    NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] getStarRating]];
-    text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] getDistance]];
-    text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] getRemark]];
-    cell.detailTextLabel.text = text;
+
+    switch (indexPath.section) {
+        case 0: 
+			cell.textLabel.text = @"Your location is";
+            cell.detailTextLabel.text = currentLocation;//currentCoordinatesString; //@"135 B Yakal, Makati City, Philippines";			
+			break;
+
+        case 1:
+			
+            cell.textLabel.text = [[records	objectAtIndex:indexPath.row] getName];
+            
+			NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] getStarRating]];
+			text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] getDistance]];
+			text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] getRemark]];
+			cell.detailTextLabel.text = text;
+            break;
+	}
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"tableview didSelectRowAtIndexPath START");
-    DetailViewController *aController = [[DetailViewController alloc]init];
-	[self.parentViewController.navigationController pushViewController:aController animated:YES];
-    NSLog(@"tableview didSelectRowAtIndexPath END");
+    if (indexPath.section == 1) {
+		
+		
+		NSMutableArray *inputDetails = [[NSMutableArray alloc]init];
+		NSLog(@"%@", [[records objectAtIndex:indexPath.row] name]);
+		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getName]];
+		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getLocation]];
+		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getCoordinate]];
+		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getCategory]];
+		//[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getContent]];
+		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getRemark]];
+		//[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getSource]];
+		
+		DetailViewController *aController = [[DetailViewController alloc] initWithRecord:[records objectAtIndex:indexPath.row]];
+		
+		[self.navigationController pushViewController:aController animated:YES];
+		[aController release];
+        [inputDetails release];
+	}
 	
 }
 

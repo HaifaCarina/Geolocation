@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Records.h"
 
 @interface DetailViewController : UIViewController {
+    NSMutableArray *details;
+	NSString *coordinates;
+    Records *record;
     
 }
+@property (nonatomic, retain) Records *record;
+@property (nonatomic, retain) NSMutableArray *details;
+
+- (id) initWithRecord: (Records *) inputRecord;
 
 @end
