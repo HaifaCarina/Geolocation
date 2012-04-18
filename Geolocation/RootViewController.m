@@ -27,6 +27,8 @@
     
     FoodViewController *foodViewController = [[FoodViewController alloc]init];
     foodViewController.tabBarItem = [[[UITabBarItem alloc]initWithTitle:@"Food" image:foodIcon tag:1]autorelease];
+    UINavigationController *foodNavController = [[UINavigationController alloc]initWithRootViewController:foodViewController];
+	foodNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     ShopViewController *shopViewController = [[ShopViewController alloc]init];
     shopViewController.tabBarItem = [[[UITabBarItem alloc]initWithTitle:@"Shop" image:shopIcon tag:2]autorelease];
@@ -39,7 +41,7 @@
     
     
     UITabBarController *atabBarController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
-    atabBarController.viewControllers = [[[NSArray alloc] initWithObjects:allNavController, foodViewController, shopViewController, sightseeingViewController,barViewController, nil] autorelease];
+    atabBarController.viewControllers = [[[NSArray alloc] initWithObjects:allNavController, foodNavController, shopViewController, sightseeingViewController,barViewController, nil] autorelease];
     atabBarController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height); 
     atabBarController.delegate = self;
 	[self.view addSubview: [atabBarController view]];
@@ -47,7 +49,7 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {  
-	//[self.parentViewController.navigationController pushViewController:viewController animated:YES];
+    [viewController viewWillAppear:YES];
 } 
 
 

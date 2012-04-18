@@ -16,6 +16,7 @@
 	NSMutableArray *records;
 	NSMutableString *newCoordinates;
     NSString *currentLocation;
+    UIFont *cellFont;
 	
 }
 
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSMutableArray *records;
 @property (nonatomic, retain) NSMutableString *newCoordinates;
 @property (nonatomic, retain) NSString *currentLocation;
+@property (nonatomic, retain) UIFont *cellFont;
 + (GlobalData*)sharedGlobalData;
 
 // global function

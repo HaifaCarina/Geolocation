@@ -9,7 +9,7 @@
 #import "GlobalData.h"
 
 @implementation GlobalData
-@synthesize message, distance, jsonData, jsonDataDistance,records,newCoordinates,currentLocation;
+@synthesize message, distance, jsonData, jsonDataDistance,records,newCoordinates,currentLocation, cellFont;
 static GlobalData *sharedGlobalData = nil;
 
 + (GlobalData*)sharedGlobalData {
@@ -24,6 +24,8 @@ static GlobalData *sharedGlobalData = nil;
         sharedGlobalData.records = [[NSMutableArray alloc]init];
 		sharedGlobalData.newCoordinates = [[NSMutableString alloc] initWithString:@""];
         sharedGlobalData.currentLocation = @"";
+        
+        sharedGlobalData.cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
 		
     }
     return sharedGlobalData;

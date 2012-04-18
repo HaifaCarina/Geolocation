@@ -16,7 +16,7 @@
 - (void) loadView 
 {
     [super loadView];
-    
+
     UIBarButtonItem *optionsButton = [[UIBarButtonItem alloc] 
 									  initWithTitle:@"Options"                                            
 									  style:UIBarButtonItemStyleBordered 
@@ -48,10 +48,11 @@
     
     calledOnce = NO;
 	currentCoordinatesString = [[NSMutableString alloc] initWithString:@""];
-    cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+    
     
 }
 - (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     if ([[GlobalData sharedGlobalData].distance compare: [NSNumber numberWithDouble:0.00]] == NSOrderedDescending) {
         [records setArray:[GlobalData sharedGlobalData].records];
@@ -298,7 +299,7 @@
         {
             NSString *cellText = [[records	objectAtIndex:indexPath.row] getName] ;
             CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-            CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+            CGSize labelSize = [cellText sizeWithFont:[GlobalData sharedGlobalData].cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
             return labelSize.height + 80;
             break;
         }
@@ -329,7 +330,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.textLabel.numberOfLines = 0;
-        cell.textLabel.font = cellFont;
+        cell.textLabel.font = [GlobalData sharedGlobalData].cellFont;
         cell.detailTextLabel.numberOfLines = 3;
     }
 
@@ -356,23 +357,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-		
-		
-		NSMutableArray *inputDetails = [[NSMutableArray alloc]init];
-		NSLog(@"%@", [[records objectAtIndex:indexPath.row] name]);
-		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getName]];
-		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getLocation]];
-		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getCoordinate]];
-		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getCategory]];
-		//[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getContent]];
-		[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getRemark]];
-		//[inputDetails addObject:[[records	objectAtIndex:indexPath.row] getSource]];
-		
 		DetailViewController *aController = [[DetailViewController alloc] initWithRecord:[records objectAtIndex:indexPath.row]];
-		
 		[self.navigationController pushViewController:aController animated:YES];
 		[aController release];
-        [inputDetails release];
 	}
 	
 }

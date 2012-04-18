@@ -180,6 +180,7 @@
 				A51633A0153D480700813C89 /* JSON */,
 				A516339C153D477200813C89 /* Records */,
 				A5163398153D471700813C89 /* GlobalData */,
+				A50D22E0153E888500C5AA0D /* Create Record */,
 				A5089B0D153D1A9900865F53 /* GeolocationAppDelegate.h */,
 				A5089B0E153D1A9900865F53 /* GeolocationAppDelegate.m */,
 				A5089B1B153D1AB100865F53 /* RootViewController.h */,
@@ -200,10 +201,6 @@
 				A51633C1153D678000813C89 /* RouteViewController.m */,
 				A51633D2153D733200813C89 /* FilterDistanceViewController.h */,
 				A51633D3153D733200813C89 /* FilterDistanceViewController.m */,
-				A50D22D5153E7E8800C5AA0D /* NewRecordViewController.h */,
-				A50D22D6153E7E8800C5AA0D /* NewRecordViewController.m */,
-				A50D22DD153E80EB00C5AA0D /* NewCoordinateViewController.h */,
-				A50D22DE153E80EB00C5AA0D /* NewCoordinateViewController.m */,
 				A5089B10153D1A9900865F53 /* MainWindow.xib */,
 				A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */,
 				A5089B05153D1A9900865F53 /* Supporting Files */,
@@ -230,6 +227,17 @@
 				A50D22DB153E80BF00C5AA0D /* NSString+Encode.m */,
 			);
 			path = "NSString+Encode";
+			sourceTree = "<group>";
+		};
+		A50D22E0153E888500C5AA0D /* Create Record */ = {
+			isa = PBXGroup;
+			children = (
+				A50D22D5153E7E8800C5AA0D /* NewRecordViewController.h */,
+				A50D22D6153E7E8800C5AA0D /* NewRecordViewController.m */,
+				A50D22DD153E80EB00C5AA0D /* NewCoordinateViewController.h */,
+				A50D22DE153E80EB00C5AA0D /* NewCoordinateViewController.m */,
+			);
+			name = "Create Record";
 			sourceTree = "<group>";
 		};
 		A5163364153D1FFB00813C89 /* images */ = {

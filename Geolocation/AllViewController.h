@@ -23,7 +23,7 @@
 	NSMutableString *currentCoordinatesString;
     NSMutableString *currentLocation;
 	UIActivityIndicatorView *myIndicator;
-    UIFont *cellFont;
+
 }
 
 @end
