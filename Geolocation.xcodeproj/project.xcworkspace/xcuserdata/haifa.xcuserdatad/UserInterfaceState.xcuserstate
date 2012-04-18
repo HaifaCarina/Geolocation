@@ -1860,10 +1860,10 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>356424796.39509398</real>
-		<string>{7625, 1706}</string>
-		<string>{9184, 0}</string>
-		<string>-connectionDidFinishLoading:</string>
+		<real>356425039.02714503</real>
+		<string>{188, 1939}</string>
+		<string>{1625, 0}</string>
+		<string>-loadView</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
@@ -7388,9 +7388,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424796.392039</real>
-		<string>{7625, 1706}</string>
-		<string>{9184, 0}</string>
+		<real>356425039.02386302</real>
+		<string>{188, 1939}</string>
+		<string>{1625, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8059,7 +8059,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424722.20297301</real>
+		<real>356424919.53096998</real>
 		<string>{0, 844}</string>
 		<string>{533, 30}</string>
 		<dict>
@@ -9292,8 +9292,8 @@
 		</dict>
 		<string>IDEDeviceLocation</string>
 		<string>IDEDeviceArchitecture</string>
-		<string>dvtdevice-iphonesimulator:/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk-iPhone</string>
-		<string>i386</string>
+		<string>dvtdevice-iphone:60c2c65d82cb119ed1656dd1fb64bb322b77420b</string>
+		<string>armv7</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9604,7 +9604,7 @@
 				<integer>771</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>356424757.42140299</real>
+			<real>356424955.26345903</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -9615,7 +9615,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 2:52 PM</string>
+		<string>Today at 2:55 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>

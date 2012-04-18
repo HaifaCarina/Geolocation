@@ -35,6 +35,13 @@
     segmentedControl.selectedSegmentIndex = 0;
     self.navigationItem.titleView = segmentedControl;
    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+	// Display loading icon
+	myIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	myIndicator.frame = CGRectMake(0,0, 40.0, 40.0);
+	myIndicator.center = CGPointMake(160, 190);
+	[self.view addSubview:myIndicator];
+	[myIndicator startAnimating];
     
     jsonData = [[NSMutableString alloc] initWithString:@""]; 
     currentLocation = [[NSMutableString alloc] initWithString:@""];
@@ -132,13 +139,7 @@
 }
 - (void) startConnection 
 {
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-	// Display loading icon
-	myIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	myIndicator.frame = CGRectMake(0,0, 40.0, 40.0);
-	myIndicator.center = CGPointMake(160, 190);
-	[self.view addSubview:myIndicator];
-	[myIndicator startAnimating];
+    
 	
 	[jsonData release];
 	jsonData = [[NSMutableString alloc] initWithString:@""]; 
