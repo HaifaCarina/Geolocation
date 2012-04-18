@@ -54,6 +54,7 @@
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {  
+    NSLog(@"change tab");
     [viewController viewWillAppear:YES];
 } 
 

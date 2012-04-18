@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Records.h"
 #import "RouteViewController.h"
-
+#import "NewRecordViewController.h"
 @interface DetailViewController : UIViewController {
     NSMutableArray *details;
 	NSString *coordinates;

@@ -10,46 +10,31 @@
 
 
 @interface Records : NSObject {
-	 NSString *name;
-	 NSString *location;
-	 NSString *coordinate;
-	 NSString *category;
-	 NSString *content;
-	 NSString *remark;
-	 NSString *source;
-	 NSString *starRating;
-	 NSString *distance;
+    NSString *name;
+    NSString *category;
+    NSString *starRating;
+    NSString *remark;
+    NSString *address1;
+    NSString *address2;
+    NSString *city;
+    NSString *state;
+    NSString *zip;
+    NSString *coordinate;
+    NSString *distance;
 }
 
 
 @property (retain) NSString *name;
-@property (retain) NSString *location;
-@property (retain) NSString *coordinate;
 @property (retain) NSString *category;
-@property (retain) NSString *content;
-@property (retain) NSString *remark;
-@property (retain) NSString *source;
 @property (retain) NSString *starRating;
+@property (retain) NSString *remark;
+@property (retain) NSString *address1;
+@property (retain) NSString *address2;
+@property (retain) NSString *city;
+@property (retain) NSString *state;
+@property (retain) NSString *zip;
+@property (retain) NSString *coordinate;
 @property (retain) NSString *distance;
-/*
-- (id) initWithName: (NSString *)inName 
-		   location: (NSString *)inLocation 
-		 coordinate: (NSString *)inCoordinate 
-		   category: (NSString *)inCategory 
-			content: (NSString *) inContent
-			 remark: (NSString *) inRemark
-			 source: (NSString *) inSource
-		 starRating: (NSString *) inStarRating
-		   distance: (NSString *) inDistance;
-*/
-- (id) getName;
-- (id) getLocation;
-- (id) getCoordinate;
-- (id) getCategory;
-- (id) getContent;
-- (id) getRemark;
-- (id) getSource;
-- (id) getStarRating;
-- (id) getDistance;
 
+- (id) getDistance;
 @end

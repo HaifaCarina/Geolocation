@@ -24,12 +24,21 @@
 - (void) loadView {
     [super loadView];
     
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] 
+									  initWithTitle:@"Edit"                                            
+									  style:UIBarButtonItemStyleBordered 
+									  target:self 
+									  action:@selector(editAction)];
+    
+    self.navigationItem.rightBarButtonItem = editButton;
+    [editButton release];
+    
     self.title = @"Information";
 	details = [[NSMutableArray alloc]init];
     coordinates = record.coordinate;
     
     [details addObject:record.name];
-    [details addObject:record.location];
+    [details addObject:record.address1];
     [details addObject:record.category];
     [details addObject:record.coordinate];
     [details addObject:record.remark];
@@ -59,6 +68,11 @@
 
 #pragma mark -
 #pragma mark Custom methods
+- (void) editAction {
+    NSLog(@"edit");
+    NewRecordViewController *aController = [[NewRecordViewController alloc]initWithRecord:record];
+    [self.navigationController pushViewController:aController animated:YES];
+}
 - (void) routeMethod: (id) button {
 	
     RouteViewController *aController = [[RouteViewController alloc] initWithCoordinates:coordinates];
@@ -66,4 +80,5 @@
 	[aController release];
     
 }
+
 @end

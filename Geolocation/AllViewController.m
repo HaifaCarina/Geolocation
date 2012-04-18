@@ -60,6 +60,7 @@
 }
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSLog(@"viewwillappear all");
     
     if ([[GlobalData sharedGlobalData].distance compare: [NSNumber numberWithDouble:0.00]] == NSOrderedDescending) {
         [records setArray:[GlobalData sharedGlobalData].records];
@@ -68,7 +69,8 @@
         NSMutableArray *keepObjects = [[NSMutableArray alloc]init];
         
         for (id i in records) {
-            NSString *distanceString = [[i getDistance]stringByReplacingOccurrencesOfString:@" mi" withString:@""];
+            
+            NSString *distanceString = [[i getDistance] stringByReplacingOccurrencesOfString:@" mi" withString:@""];
             NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
             [f setRoundingIncrement:[NSNumber numberWithDouble:0.00000]];
             NSNumber * d1 = [f numberFromString:distanceString];
@@ -205,28 +207,32 @@
 	for (NSDictionary *file in files)
 	{       
 		NSString *name = [file objectForKey:@"name"];
-		NSString *location = [file objectForKey:@"address_1"];
 		NSString *coordinate = [file objectForKey:@"coordinates"];
 		NSString *category = [file objectForKey:@"category"];
-		NSString *content = [file objectForKey:@"content"];
 		NSString *remark = [file objectForKey:@"remarks"];
-		NSString *source = [file objectForKey:@"source"];
 		NSString *starRating = [file objectForKey:@"star_rating"];
         NSString *distance = [file objectForKey:@"distance"];
         
+        NSString *address1 = [file objectForKey:@"address_1"];
+        NSString *address2 = [file objectForKey:@"address_2"];
+        NSString *city = [file objectForKey:@"city"];
+        NSString *state = [file objectForKey:@"state"];
+        NSString *zip = [file objectForKey:@"zip"];
          
         // Display non-null distance values
         if (![distance isKindOfClass:[NSNull class]]) {
             Records *record = [[Records alloc]init];
             record.name = name;
-            record.location = location;
             record.coordinate = coordinate;
             record.category = category;
-            record.content = content;
             record.remark = remark;
-            record.source = source;
             record.starRating = starRating;
             record.distance = distance;
+            record.address1 = address1;
+            record.address2 = address2;
+            record.city = city;
+            record.state = state;
+            record.zip = zip;
             
             [records addObject: record];
             [record release];
@@ -299,7 +305,7 @@
         }	
 		case 1: 
         {
-            NSString *cellText = [[records	objectAtIndex:indexPath.row] getName] ;
+            NSString *cellText = [[records	objectAtIndex:indexPath.row] name] ;
             CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
             CGSize labelSize = [cellText sizeWithFont:[GlobalData sharedGlobalData].cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
             return labelSize.height + 80;
@@ -344,11 +350,11 @@
 
         case 1:
 			
-            cell.textLabel.text = [[records	objectAtIndex:indexPath.row] getName];
+            cell.textLabel.text = [[records	objectAtIndex:indexPath.row] name];
             
-			NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] getStarRating]];
-			text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] getDistance]];
-			text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] getRemark]];
+			NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] starRating]];
+			text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] distance]];
+			text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] remark]];
 			cell.detailTextLabel.text = text;
             break;
 	}

@@ -48,7 +48,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    NSLog(@"viewwillappear bar");
     if ([[GlobalData sharedGlobalData].distance compare: [NSNumber numberWithDouble:0.00]] == NSOrderedDescending) {
         [records setArray:[GlobalData sharedGlobalData].records];
         
@@ -56,15 +56,17 @@
         NSMutableArray *keepObjects = [[NSMutableArray alloc]init];
         
         for (id i in records) {
-            NSString *distanceString = [[i getDistance]stringByReplacingOccurrencesOfString:@" mi" withString:@""];
-            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-            [f setRoundingIncrement:[NSNumber numberWithDouble:0.00000]];
-            NSNumber * d1 = [f numberFromString:distanceString];
-            [f release];
-            if ([d1 compare:[GlobalData sharedGlobalData].distance] == NSOrderedDescending) { //d1  > d2
-                [discardedObjects addObject:i];
-            } else {
-                [keepObjects addObject:i];
+            if ([[i category] compare:@"Bar"] == NSOrderedSame) {
+                NSString *distanceString = [[i getDistance]stringByReplacingOccurrencesOfString:@" mi" withString:@""];
+                NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+                [f setRoundingIncrement:[NSNumber numberWithDouble:0.00000]];
+                NSNumber * d1 = [f numberFromString:distanceString];
+                [f release];
+                if ([d1 compare:[GlobalData sharedGlobalData].distance] == NSOrderedDescending) { //d1  > d2
+                    [discardedObjects addObject:i];
+                } else {
+                    [keepObjects addObject:i];
+                }
             }
         }
         
@@ -181,7 +183,7 @@
         }	
 		case 1: 
         {
-            NSString *cellText = [[records	objectAtIndex:indexPath.row] getName] ;
+            NSString *cellText = [[records	objectAtIndex:indexPath.row] name] ;
             CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
             CGSize labelSize = [cellText sizeWithFont:[GlobalData sharedGlobalData].cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
             return labelSize.height + 80;
@@ -226,11 +228,11 @@
             
         case 1:
 			
-            cell.textLabel.text = [[records	objectAtIndex:indexPath.row] getName];
+            cell.textLabel.text = [[records	objectAtIndex:indexPath.row] name];
             
-			NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] getStarRating]];
-			text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] getDistance]];
-			text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] getRemark]];
+			NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] starRating]];
+			text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] distance]];
+			text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] remark]];
 			cell.detailTextLabel.text = text;
             break;
 	}

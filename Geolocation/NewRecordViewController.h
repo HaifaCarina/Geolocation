@@ -10,7 +10,7 @@
 #import "GlobalData.h"
 #import "NSString+Encode.h"
 #import "NewCoordinateViewController.h"
-
+#import "Records.h"
 @interface NewRecordViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>{
     UITextField *nameField;
 	UITextField *categoryField;
@@ -25,5 +25,6 @@
     
     NSArray *categories;
 }
+- (id) initWithRecord:(Records *)inputRecord;
 
 @end
