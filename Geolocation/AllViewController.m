@@ -258,10 +258,10 @@
 		}
 		case 1:
 		{
-			/*NewRecordViewController *aController = [[NewRecordViewController alloc] init];
+			NewRecordViewController *aController = [[NewRecordViewController alloc] init];
             [self.navigationController pushViewController:aController animated:YES];
             [aController release];
-            */
+            
             
             break;
 		}

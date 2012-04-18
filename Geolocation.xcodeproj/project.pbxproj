@@ -16,6 +16,9 @@
 		A5089B12153D1A9900865F53 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5089B10153D1A9900865F53 /* MainWindow.xib */; };
 		A5089B15153D1A9900865F53 /* Geolocation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */; };
 		A5089B1D153D1AB100865F53 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5089B1C153D1AB100865F53 /* RootViewController.m */; };
+		A50D22D7153E7E8800C5AA0D /* NewRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50D22D6153E7E8800C5AA0D /* NewRecordViewController.m */; };
+		A50D22DC153E80BF00C5AA0D /* NSString+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = A50D22DB153E80BF00C5AA0D /* NSString+Encode.m */; };
+		A50D22DF153E80EB00C5AA0D /* NewCoordinateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50D22DE153E80EB00C5AA0D /* NewCoordinateViewController.m */; };
 		A5163356153D1E3E00813C89 /* AllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5163355153D1E3E00813C89 /* AllViewController.m */; };
 		A516335A153D1E6E00813C89 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5163359153D1E6E00813C89 /* FoodViewController.m */; };
 		A516335D153D1E9A00813C89 /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A516335C153D1E9A00813C89 /* ShopViewController.m */; };
@@ -62,6 +65,12 @@
 		A5089B14153D1A9900865F53 /* Geolocation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Geolocation.xcdatamodel; sourceTree = "<group>"; };
 		A5089B1B153D1AB100865F53 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		A5089B1C153D1AB100865F53 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		A50D22D5153E7E8800C5AA0D /* NewRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRecordViewController.h; sourceTree = "<group>"; };
+		A50D22D6153E7E8800C5AA0D /* NewRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRecordViewController.m; sourceTree = "<group>"; };
+		A50D22DA153E80BF00C5AA0D /* NSString+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encode.h"; sourceTree = "<group>"; };
+		A50D22DB153E80BF00C5AA0D /* NSString+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encode.m"; sourceTree = "<group>"; };
+		A50D22DD153E80EB00C5AA0D /* NewCoordinateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCoordinateViewController.h; sourceTree = "<group>"; };
+		A50D22DE153E80EB00C5AA0D /* NewCoordinateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCoordinateViewController.m; sourceTree = "<group>"; };
 		A5163354153D1E3D00813C89 /* AllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllViewController.h; sourceTree = "<group>"; };
 		A5163355153D1E3E00813C89 /* AllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllViewController.m; sourceTree = "<group>"; };
 		A5163358153D1E6E00813C89 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
@@ -165,6 +174,7 @@
 		A5089B04153D1A9900865F53 /* Geolocation */ = {
 			isa = PBXGroup;
 			children = (
+				A50D22D9153E80BF00C5AA0D /* NSString+Encode */,
 				A51633C3153D681C00813C89 /* DDAnnotation */,
 				A51633B9153D676800813C89 /* NVPolyline */,
 				A51633A0153D480700813C89 /* JSON */,
@@ -190,6 +200,10 @@
 				A51633C1153D678000813C89 /* RouteViewController.m */,
 				A51633D2153D733200813C89 /* FilterDistanceViewController.h */,
 				A51633D3153D733200813C89 /* FilterDistanceViewController.m */,
+				A50D22D5153E7E8800C5AA0D /* NewRecordViewController.h */,
+				A50D22D6153E7E8800C5AA0D /* NewRecordViewController.m */,
+				A50D22DD153E80EB00C5AA0D /* NewCoordinateViewController.h */,
+				A50D22DE153E80EB00C5AA0D /* NewCoordinateViewController.m */,
 				A5089B10153D1A9900865F53 /* MainWindow.xib */,
 				A5089B13153D1A9900865F53 /* Geolocation.xcdatamodeld */,
 				A5089B05153D1A9900865F53 /* Supporting Files */,
@@ -207,6 +221,15 @@
 				A5089B0B153D1A9900865F53 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A50D22D9153E80BF00C5AA0D /* NSString+Encode */ = {
+			isa = PBXGroup;
+			children = (
+				A50D22DA153E80BF00C5AA0D /* NSString+Encode.h */,
+				A50D22DB153E80BF00C5AA0D /* NSString+Encode.m */,
+			);
+			path = "NSString+Encode";
 			sourceTree = "<group>";
 		};
 		A5163364153D1FFB00813C89 /* images */ = {
@@ -369,6 +392,9 @@
 				A51633C8153D681D00813C89 /* DDAnnotation.m in Sources */,
 				A51633C9153D681D00813C89 /* DDAnnotationView.m in Sources */,
 				A51633D4153D733200813C89 /* FilterDistanceViewController.m in Sources */,
+				A50D22D7153E7E8800C5AA0D /* NewRecordViewController.m in Sources */,
+				A50D22DC153E80BF00C5AA0D /* NSString+Encode.m in Sources */,
+				A50D22DF153E80EB00C5AA0D /* NewCoordinateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
