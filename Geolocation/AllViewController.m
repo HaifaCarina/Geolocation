@@ -132,6 +132,7 @@
 }
 - (void) startConnection 
 {
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
 	// Display loading icon
 	myIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	myIndicator.frame = CGRectMake(0,0, 40.0, 40.0);
@@ -240,7 +241,7 @@
 	[mainTableView setDataSource:self];
 	[mainTableView setDelegate:self];
 	[self.view addSubview:mainTableView];
-	
+	[[UIApplication sharedApplication] endIgnoringInteractionEvents];
 }
 #pragma mark -
 #pragma mark UIActionSheetDelegate

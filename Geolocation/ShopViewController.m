@@ -10,52 +10,241 @@
 
 
 @implementation ShopViewController
-
+#pragma mark -
+#pragma mark Life Cycle methods
 - (void) loadView {
     [super loadView];
     
-    UITableView *mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,CGRectGetWidth(self.view.bounds),375) style:UITableViewStylePlain];
-    [mainTableView setDataSource:self];
+    UIBarButtonItem *optionsButton = [[UIBarButtonItem alloc] 
+									  initWithTitle:@"Options"                                            
+									  style:UIBarButtonItemStyleBordered 
+									  target:self 
+									  action:@selector(optionsAction)];
+    
+    self.navigationItem.leftBarButtonItem = optionsButton;
+    [optionsButton release];
+    
+    // Add filter options tab
+    NSArray *itemArray = [NSArray arrayWithObjects: @"Distance", @"Star Rating", nil];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
+    [segmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
+    segmentedControl.frame = CGRectMake(0, 00, 150, 30);
+    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.selectedSegmentIndex = 0;
+    self.navigationItem.titleView = segmentedControl;
+    
+    records = [[NSMutableArray alloc]init];
+    
+    for (Records *r in [GlobalData sharedGlobalData].records) {
+        if ([[r category] compare:@"Shop"] == NSOrderedSame) {
+            [records addObject:r];
+        }
+    }
+    mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,CGRectGetWidth(self.view.bounds),375) style:UITableViewStyleGrouped];
+	[mainTableView setDataSource:self];
 	[mainTableView setDelegate:self];
-    [self.view addSubview:mainTableView];
+	[self.view addSubview:mainTableView];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([[GlobalData sharedGlobalData].distance compare: [NSNumber numberWithDouble:0.00]] == NSOrderedDescending) {
+        [records setArray:[GlobalData sharedGlobalData].records];
+        
+        NSMutableArray *discardedObjects = [[NSMutableArray alloc]init];
+        NSMutableArray *keepObjects = [[NSMutableArray alloc]init];
+        
+        for (id i in records) {
+            NSString *distanceString = [[i getDistance]stringByReplacingOccurrencesOfString:@" mi" withString:@""];
+            NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+            [f setRoundingIncrement:[NSNumber numberWithDouble:0.00000]];
+            NSNumber * d1 = [f numberFromString:distanceString];
+            [f release];
+            if ([d1 compare:[GlobalData sharedGlobalData].distance] == NSOrderedDescending) { //d1  > d2
+                [discardedObjects addObject:i];
+            } else {
+                [keepObjects addObject:i];
+            }
+        }
+        
+        [records setArray:keepObjects];
+        [keepObjects release];
+        [discardedObjects release];
+        
+    }
+	[mainTableView reloadData];
 }
 #pragma mark -
-#pragma mark Table view methods
+#pragma mark Custom methods
+- (void) optionsAction 
+{
+    NSLog(@"options");
+    UIActionSheet *optionsAlert = [[UIActionSheet alloc] initWithTitle:@"Select option:"
+                                                              delegate:self cancelButtonTitle:@"Cancel"
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:	@"Filter Distance",
+                                   @"Create New Entry",
+                                   nil,
+                                   nil];
+    optionsAlert.actionSheetStyle = self.navigationController.navigationBar.barStyle;
+	[optionsAlert showInView:self.parentViewController.tabBarController.view];
+    [optionsAlert release];
+}
 
-// Customize the number of sections in the table view.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (void) segmentedControlAction: (UISegmentedControl *)segmentedControl {
+    
+    NSArray *sortedArray;
+    
+    if ([segmentedControl selectedSegmentIndex] == 0) 
+    {
+        NSLog(@"customSwitch is DIST");
+		
+        sortedArray = [records sortedArrayUsingComparator:^(id a, id b) 
+                       {
+                           NSString *first = [(Records*)a distance];
+                           NSString *second = [(Records*)b distance];
+                           return [first compare:second];
+                       }];
+        
+        records = [(NSArray*)sortedArray mutableCopy];
+        [mainTableView reloadData];        
+	} else 
+    {
+		NSLog(@"customSwitch is STAR");
+		
+        sortedArray = [records sortedArrayUsingComparator:^(id a, id b) 
+                       {
+                           NSString *first = [(Records*)a starRating];
+                           NSString *second = [(Records*)b starRating];
+                           return [second compare:first];
+                       }];
+        
+        records = [(NSArray*)sortedArray mutableCopy];
+        [mainTableView reloadData];
+	}
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Change the navigation bar style, also make the status bar match with it
+	switch (buttonIndex)
+	{
+		case 0:
+		{
+			FilterDistanceViewController *aController = [[FilterDistanceViewController alloc]init];
+            [self.navigationController pushViewController:aController animated:YES];
+            [aController release];
+			break;
+		}
+		case 1:
+		{
+			NewRecordViewController *aController = [[NewRecordViewController alloc] init];
+            [self.navigationController pushViewController:aController animated:YES];
+            [aController release];
+            
+            
+            break;
+		}
+            
+	}
+}
+
+#pragma mark -
+#pragma mark Table view methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
+{ 
+    if (section == 0) {
+		return 1;
+	} else if (section == 1) {
+		return [records count];
+	}
+    
     return 1;
 }
 
-// Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
-    return 10;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 0: 
+        {
+            return 50;
+			break;
+        }	
+		case 1: 
+        {
+            NSString *cellText = [[records	objectAtIndex:indexPath.row] getName] ;
+            CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+            CGSize labelSize = [cellText sizeWithFont:[GlobalData sharedGlobalData].cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+            return labelSize.height + 80;
+            break;
+        }
+            
+	}
+    return 50;
 }
-
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+    //static NSString *CellIdentifier = @"Cell"; 
     
-    static NSString *CellIdentifier = @"Cell"; 
-    
-	// if a cell can be reused, it returns a UITableViewCell with the associated identifier or nil if no such cell exists
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier;
 	
-	// if no cell to reuse, then create a new one
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+	switch (indexPath.section) {
+        case 0: 
+			CellIdentifier = @"Location"; 
+			break;
+		case 1:
+			CellIdentifier = @"Records"; 
+			break;
+	}
+    
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) 
+    {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = [GlobalData sharedGlobalData].cellFont;
+        cell.detailTextLabel.numberOfLines = 3;
     }
-	
-	// Set up the cell...	
-	cell.textLabel.text = [NSString stringWithFormat:@"shop item %d",indexPath.row];
-	
+    
+    switch (indexPath.section) {
+        case 0: 
+			cell.textLabel.text = @"Your location is";
+            cell.detailTextLabel.text = [GlobalData sharedGlobalData].currentLocation;//currentCoordinatesString; //@"135 B Yakal, Makati City, Philippines";			
+			break;
+            
+        case 1:
+			
+            cell.textLabel.text = [[records	objectAtIndex:indexPath.row] getName];
+            
+			NSString *text = [NSString stringWithFormat: @"Star Rating: %@",[[records	objectAtIndex:indexPath.row] getStarRating]];
+			text = [text stringByAppendingFormat:@"\nDistance: %@" ,[[records objectAtIndex:indexPath.row] getDistance]];
+			text = [text stringByAppendingFormat:@"\nRemarks: %@" ,[[records objectAtIndex:indexPath.row] getRemark]];
+			cell.detailTextLabel.text = text;
+            break;
+	}
+    
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"tableview didSelectRowAtIndexPath START");
-	NSLog(@"tableview didSelectRowAtIndexPath END");
+    if (indexPath.section == 1) {
+		DetailViewController *aController = [[DetailViewController alloc] initWithRecord:[records objectAtIndex:indexPath.row]];
+		[self.navigationController pushViewController:aController animated:YES];
+		[aController release];
+	}
 	
 }
-
 @end

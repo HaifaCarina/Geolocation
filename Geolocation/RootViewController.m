@@ -32,16 +32,21 @@
     
     ShopViewController *shopViewController = [[ShopViewController alloc]init];
     shopViewController.tabBarItem = [[[UITabBarItem alloc]initWithTitle:@"Shop" image:shopIcon tag:2]autorelease];
+    UINavigationController *shopNavController = [[UINavigationController alloc]initWithRootViewController:shopViewController];
+	shopNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     SightseeingViewController *sightseeingViewController = [[SightseeingViewController alloc]init];
     sightseeingViewController.tabBarItem = [[[UITabBarItem alloc]initWithTitle:@"Sightseeing" image:sightseeingIcon tag:3]autorelease];
+    UINavigationController *sightseeingNavController = [[UINavigationController alloc]initWithRootViewController:sightseeingViewController];
+	sightseeingNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     BarViewController *barViewController =[[BarViewController alloc]init];
     barViewController.tabBarItem = [[[UITabBarItem alloc]initWithTitle:@"Bar" image:barIcon tag:4]autorelease];
-    
+    UINavigationController *barNavController = [[UINavigationController alloc]initWithRootViewController:barViewController];
+	barNavController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     UITabBarController *atabBarController = [[UITabBarController alloc] initWithNibName:nil bundle:nil];
-    atabBarController.viewControllers = [[[NSArray alloc] initWithObjects:allNavController, foodNavController, shopViewController, sightseeingViewController,barViewController, nil] autorelease];
+    atabBarController.viewControllers = [[[NSArray alloc] initWithObjects:allNavController, foodNavController, shopNavController, sightseeingNavController,barNavController, nil] autorelease];
     atabBarController.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height); 
     atabBarController.delegate = self;
 	[self.view addSubview: [atabBarController view]];

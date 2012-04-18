@@ -1860,10 +1860,10 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>356424225.16678399</real>
-		<string>{379, 2372}</string>
-		<string>{1251, 0}</string>
-		<string>-loadView</string>
+		<real>356424796.39509398</real>
+		<string>{7625, 1706}</string>
+		<string>{9184, 0}</string>
+		<string>-connectionDidFinishLoading:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
@@ -6868,19 +6868,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>278</integer>
+					<integer>181</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>279</integer>
+					<integer>182</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>280</integer>
+					<integer>183</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>281</integer>
+					<integer>184</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -6903,9 +6903,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356328852.72002703</real>
-		<string>{0, 308}</string>
-		<string>{293, 0}</string>
+		<real>356424465.55474102</real>
+		<string>{0, 569}</string>
+		<string>{560, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7388,9 +7388,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424225.16399002</real>
-		<string>{379, 2372}</string>
-		<string>{1251, 0}</string>
+		<real>356424796.392039</real>
+		<string>{7625, 1706}</string>
+		<string>{9184, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7497,19 +7497,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>278</integer>
+					<integer>181</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>279</integer>
+					<integer>182</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>280</integer>
+					<integer>183</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>281</integer>
+					<integer>184</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -7532,9 +7532,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356328849.92342699</real>
-		<string>{0, 294}</string>
-		<string>{279, 0}</string>
+		<real>356424458.44670099</real>
+		<string>{0, 555}</string>
+		<string>{546, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7580,7 +7580,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424070.33381599</real>
+		<real>356424567.32165903</real>
 		<string>{0, 471}</string>
 		<string>{374, 0}</string>
 		<dict>
@@ -7963,9 +7963,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424120.54717702</real>
-		<string>{192, 1995}</string>
-		<string>{317, 0}</string>
+		<real>356424425.67093199</real>
+		<string>{6934, 1738}</string>
+		<string>{228, 8437}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7976,19 +7976,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>278</integer>
+					<integer>181</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>279</integer>
+					<integer>182</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>280</integer>
+					<integer>183</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>281</integer>
+					<integer>184</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -8011,9 +8011,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356328929.65929401</real>
-		<string>{44, 1816}</string>
-		<string>{1609, 0}</string>
+		<real>356424374.51550299</real>
+		<string>{3, 1771}</string>
+		<string>{1406, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8059,7 +8059,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424082.29899901</real>
+		<real>356424722.20297301</real>
 		<string>{0, 844}</string>
 		<string>{533, 30}</string>
 		<dict>
@@ -8072,19 +8072,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>278</integer>
+					<integer>181</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>279</integer>
+					<integer>182</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>280</integer>
+					<integer>183</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>281</integer>
+					<integer>184</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -8107,9 +8107,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356328910.58861899</real>
-		<string>{46, 1810}</string>
-		<string>{1600, 5}</string>
+		<real>356424566.59879303</real>
+		<string>{508, 2259}</string>
+		<string>{1651, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8120,19 +8120,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>278</integer>
+					<integer>181</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>279</integer>
+					<integer>182</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>280</integer>
+					<integer>183</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>281</integer>
+					<integer>184</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -8155,9 +8155,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356328922.51087803</real>
-		<string>{51, 1837}</string>
-		<string>{1637, 0}</string>
+		<real>356424400.279796</real>
+		<string>{205, 2124}</string>
+		<string>{1429, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8168,19 +8168,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>278</integer>
+					<integer>181</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>279</integer>
+					<integer>182</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>280</integer>
+					<integer>183</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>281</integer>
+					<integer>184</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -8203,9 +8203,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356328855.82976699</real>
-		<string>{0, 292}</string>
-		<string>{277, 0}</string>
+		<real>356424476.11082</real>
+		<string>{0, 552}</string>
+		<string>{543, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8346,9 +8346,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424080.05233502</real>
-		<string>{227, 2381}</string>
-		<string>{2554, 0}</string>
+		<real>356424720.74859101</real>
+		<string>{192, 3000}</string>
+		<string>{1647, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8442,9 +8442,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356424088.14082098</real>
+		<real>356424456.57389498</real>
 		<string>{0, 555}</string>
-		<string>{483, 0}</string>
+		<string>{386, 160}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9604,7 +9604,7 @@
 				<integer>771</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>356424201.68087298</real>
+			<real>356424757.42140299</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -9615,7 +9615,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 2:43 PM</string>
+		<string>Today at 2:52 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -9787,7 +9787,7 @@
 				<integer>786</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/FoodViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/AllViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9805,7 +9805,7 @@
 				<integer>788</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/FoodViewController.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/RootViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9823,7 +9823,7 @@
 				<integer>790</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/AllViewController.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/RootViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9841,7 +9841,7 @@
 				<integer>792</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/RootViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/BarViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9859,7 +9859,7 @@
 				<integer>794</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/RootViewController.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/BarViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9877,7 +9877,7 @@
 				<integer>796</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/GeolocationAppDelegate.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/SightseeingViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9895,7 +9895,7 @@
 				<integer>798</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/GeolocationAppDelegate.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/ShopViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9913,7 +9913,7 @@
 				<integer>800</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/GlobalData/GlobalData.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/FoodViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9931,7 +9931,7 @@
 				<integer>802</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/FilterDistanceViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/FoodViewController.m</string>
 	</array>
 	<key>$top</key>
 	<dict>

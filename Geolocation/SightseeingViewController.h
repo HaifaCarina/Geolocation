@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
-@interface SightseeingViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>{
-    
+#import "GlobalData.h"
+#import "Records.h"
+#import "DetailViewController.h"
+#import "NewRecordViewController.h"
+#import "FilterDistanceViewController.h"
+@interface SightseeingViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate,UINavigationControllerDelegate>{
+    UITableView *mainTableView;
+    NSMutableArray *records;
 }
 
 @end

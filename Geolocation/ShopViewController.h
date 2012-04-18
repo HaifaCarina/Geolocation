@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
-@interface ShopViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>{
-    
+#import "GlobalData.h"
+#import "Records.h"
+#import "DetailViewController.h"
+#import "NewRecordViewController.h"
+#import "FilterDistanceViewController.h"
+@interface ShopViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate,UINavigationControllerDelegate>{
+    UITableView *mainTableView;
+    NSMutableArray *records;
 }
 
 @end
