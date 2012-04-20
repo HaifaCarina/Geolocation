@@ -306,7 +306,7 @@
                                     [cityField.text encodeString:NSUTF8StringEncoding],
                                     [stateField.text encodeString:NSUTF8StringEncoding],
                                     [zipField.text encodeString:NSUTF8StringEncoding],
-                                    [GlobalData sharedGlobalData].newCoordinates,
+                                    [coordinatesField.text encodeString:NSUTF8StringEncoding],
                                     [NSString stringWithFormat:@"1"] ]; // THIS SHOULD BE DYNAMIC
             
             NSURL *url = [NSURL URLWithString:urlAddress];
@@ -327,7 +327,7 @@
                                     [cityField.text encodeString:NSUTF8StringEncoding],
                                     [stateField.text encodeString:NSUTF8StringEncoding],
                                     [zipField.text encodeString:NSUTF8StringEncoding],
-                                    [GlobalData sharedGlobalData].newCoordinates,
+                                    [coordinatesField.text encodeString:NSUTF8StringEncoding],
                                     recordId]; // THIS SHOULD BE DYNAMIC
             
             NSLog(@"%@",urlAddress);

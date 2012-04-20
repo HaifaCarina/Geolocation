@@ -147,7 +147,7 @@
 			<string>NSArray</string>
 		</dict>
 		<true/>
-		<string>{{0, 6}, {1439, 872}}</string>
+		<string>{{-10, 6}, {1439, 872}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -234,7 +234,7 @@
 		<string>IDEShowUtilities</string>
 		<string>IDEEditorArea</string>
 		<integer>0</integer>
-		<string>EditCoordinateViewController.m</string>
+		<string>NewRecordViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -564,7 +564,7 @@
 		<string>Geolocation</string>
 		<string>Geolocation</string>
 		<string>Create Record</string>
-		<string>EditCoordinateViewController.m</string>
+		<string>NewRecordViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1344,7 +1344,7 @@
 				<integer>135</integer>
 			</dict>
 			<key>NS.string</key>
-			<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/EditCoordinateViewController.m</string>
+			<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/NewRecordViewController.m</string>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -2070,10 +2070,10 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>356592910.58998501</real>
-		<string>{278, 1784}</string>
-		<string>{1574, 0}</string>
-		<string>-loadView</string>
+		<real>356593281.02559501</real>
+		<string>{13594, 2939}</string>
+		<string>{16409, 0}</string>
+		<string>-doneAction</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
 		<dict>
 			<key>$class</key>
@@ -2092,7 +2092,7 @@
 				<integer>204</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/EditCoordinateViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/NewRecordViewController.m</string>
 		<dict>
 			<key>$classes</key>
 			<array>
@@ -7038,9 +7038,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356592520.45453602</real>
-		<string>{16829, 1015}</string>
-		<string>{17271, 0}</string>
+		<real>356593280.97353202</real>
+		<string>{13594, 2939}</string>
+		<string>{16409, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7811,9 +7811,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356592910.58784002</real>
-		<string>{278, 1784}</string>
-		<string>{1574, 0}</string>
+		<real>356593249.31157601</real>
+		<string>{3009, 1538}</string>
+		<string>{1010, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8435,7 +8435,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>356592813.360259</real>
+		<real>356593242.40011197</real>
 		<string>{0, 630}</string>
 		<string>{483, 0}</string>
 		<dict>
@@ -9475,8 +9475,8 @@
 		</dict>
 		<string>IDEDeviceLocation</string>
 		<string>IDEDeviceArchitecture</string>
-		<string>dvtdevice-iphonesimulator:/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk-iPhone</string>
-		<string>i386</string>
+		<string>dvtdevice-iphone:60c2c65d82cb119ed1656dd1fb64bb322b77420b</string>
+		<string>armv7</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9533,7 +9533,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>769</integer>
+					<integer>62</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9787,7 +9787,7 @@
 				<integer>785</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>356592832.18906802</real>
+			<real>356593279.19165802</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -9798,7 +9798,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 1:33 PM</string>
+		<string>Today at 1:41 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -9952,7 +9952,7 @@
 				<integer>798</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/EditCoordinateViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/NewRecordViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9970,7 +9970,7 @@
 				<integer>800</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/EditCoordinateViewController.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/EditCoordinateViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9988,7 +9988,7 @@
 				<integer>802</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/NewRecordViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/Juno%20Project/Geolocation/Geolocation/EditCoordinateViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
