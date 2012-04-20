@@ -11,6 +11,7 @@
 #import "NSString+Encode.h"
 #import "NewCoordinateViewController.h"
 #import "Records.h"
+#import "EditCoordinateViewController.h"
 @interface NewRecordViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate>{
     UITextField *nameField;
 	UITextField *categoryField;
@@ -21,9 +22,12 @@
 	UITextField *cityField;
 	UITextField *stateField;
 	UITextField *zipField;
-    UILabel *coordinatesField;
+    UITextField *coordinatesField;
     
     NSArray *categories;
+    
+    int inputTypeTag;
+    NSString *recordId;
 }
 - (id) initWithRecord:(Records *)inputRecord;
 

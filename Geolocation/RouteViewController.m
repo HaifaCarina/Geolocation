@@ -144,7 +144,7 @@
     DDAnnotation *destAnnotation = [[[DDAnnotation alloc] initWithCoordinate:destCoordinate addressDictionary:nil] autorelease];
 	destAnnotation.title = @"Destination";
     
-	destAnnotation.subtitle = [NSString	stringWithFormat:@"%f %f", ddAnnotation.coordinate.latitude, ddAnnotation.coordinate.longitude];
+	destAnnotation.subtitle = [NSString	stringWithFormat:@"%f %f", destAnnotation.coordinate.latitude, destAnnotation.coordinate.longitude];
 	[_mapView addAnnotation:destAnnotation];	
 	
 }

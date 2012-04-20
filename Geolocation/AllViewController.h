@@ -23,7 +23,6 @@
 	NSMutableString *currentCoordinatesString;
     NSMutableString *currentLocation;
 	UIActivityIndicatorView *myIndicator;
-
 }
 
 @end

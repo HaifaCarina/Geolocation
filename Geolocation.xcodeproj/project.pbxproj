@@ -47,6 +47,7 @@
 		A51633C8153D681D00813C89 /* DDAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C5153D681D00813C89 /* DDAnnotation.m */; };
 		A51633C9153D681D00813C89 /* DDAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633C7153D681D00813C89 /* DDAnnotationView.m */; };
 		A51633D4153D733200813C89 /* FilterDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51633D3153D733200813C89 /* FilterDistanceViewController.m */; };
+		A54B9C8C15412887005845AF /* EditCoordinateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54B9C8B15412887005845AF /* EditCoordinateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,8 @@
 		A51633C7153D681D00813C89 /* DDAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAnnotationView.m; sourceTree = "<group>"; };
 		A51633D2153D733200813C89 /* FilterDistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDistanceViewController.h; sourceTree = "<group>"; };
 		A51633D3153D733200813C89 /* FilterDistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDistanceViewController.m; sourceTree = "<group>"; };
+		A54B9C8A15412887005845AF /* EditCoordinateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCoordinateViewController.h; sourceTree = "<group>"; };
+		A54B9C8B15412887005845AF /* EditCoordinateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCoordinateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +239,8 @@
 				A50D22D6153E7E8800C5AA0D /* NewRecordViewController.m */,
 				A50D22DD153E80EB00C5AA0D /* NewCoordinateViewController.h */,
 				A50D22DE153E80EB00C5AA0D /* NewCoordinateViewController.m */,
+				A54B9C8A15412887005845AF /* EditCoordinateViewController.h */,
+				A54B9C8B15412887005845AF /* EditCoordinateViewController.m */,
 			);
 			name = "Create Record";
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				A50D22D7153E7E8800C5AA0D /* NewRecordViewController.m in Sources */,
 				A50D22DC153E80BF00C5AA0D /* NSString+Encode.m in Sources */,
 				A50D22DF153E80EB00C5AA0D /* NewCoordinateViewController.m in Sources */,
+				A54B9C8C15412887005845AF /* EditCoordinateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

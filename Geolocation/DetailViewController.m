@@ -23,7 +23,7 @@
 
 - (void) loadView {
     [super loadView];
-    
+    NSLog(@"detail record id %@", [record recordId]);
     UIBarButtonItem *editButton = [[UIBarButtonItem alloc] 
 									  initWithTitle:@"Edit"                                            
 									  style:UIBarButtonItemStyleBordered 

@@ -11,8 +11,6 @@
 
 @implementation NewRecordViewController
 
-
-
 #pragma mark -
 #pragma mark LifeCycle methods
 - (id) init {
@@ -31,12 +29,16 @@
         cityField = [[UITextField alloc] initWithFrame:CGRectMake(110, 250, 200, 30 )];
         stateField = [[UITextField alloc] initWithFrame:CGRectMake(110, 290, 200, 30 )];
         zipField = [[UITextField alloc] initWithFrame:CGRectMake(110, 330, 200, 30)];
+        coordinatesField = [[UITextField alloc] initWithFrame:CGRectMake(110, 370, 200, 30)];
+        inputTypeTag = 1;
     }
     return(self);
 }
 
 - (id) initWithRecord:(Records *)inputRecord {
-    if (self == [super init]) {
+    if (self == [super init]) { 
+        NSLog(@"edit record id %@", [inputRecord recordId]);
+        recordId = [inputRecord recordId];
         nameField = [[UITextField alloc] initWithFrame:CGRectMake(110, 10, 200, 30 )];
         nameField.text = [[inputRecord name] isKindOfClass:[NSNull class]]?@"":[inputRecord name];
         
@@ -63,6 +65,11 @@
         
         zipField = [[UITextField alloc] initWithFrame:CGRectMake(110, 330, 200, 30)];
         zipField.text = [[inputRecord zip] isKindOfClass:[NSNull class]]?@"":[inputRecord zip];
+        
+        coordinatesField = [[UITextField alloc] initWithFrame:CGRectMake(110, 370, 200, 30)];
+        coordinatesField.text = [[inputRecord coordinate] isKindOfClass:[NSNull class]]?@"":[inputRecord coordinate];
+        [GlobalData sharedGlobalData].newCoordinates = [(NSString*)coordinatesField.text mutableCopy];
+        inputTypeTag = 2;
     }
     return(self);
 }
@@ -88,11 +95,9 @@
 	[scrollview addSubview: nameLabel];
     [nameLabel release];
 	
-    //nameField = [[UITextField alloc] initWithFrame:CGRectMake(110, 10, 200, 30 )];
     nameField.borderStyle = UITextBorderStyleRoundedRect;
     nameField.textColor = [UIColor blackColor];
     nameField.font = [UIFont systemFontOfSize:17.0];
-    //nameField.placeholder = @"(Required)";  //place holder
     nameField.backgroundColor = [UIColor whiteColor];
     nameField.autocorrectionType = UITextAutocorrectionTypeNo;  
     nameField.backgroundColor = [UIColor clearColor];
@@ -106,11 +111,9 @@
 	[scrollview addSubview:categoryLabel];
 	[categoryLabel release];
 	
-	//categoryField = [[UITextField alloc] initWithFrame:CGRectMake(110, 50, 200, 30)];
-    categoryField.borderStyle = UITextBorderStyleRoundedRect;
+	categoryField.borderStyle = UITextBorderStyleRoundedRect;
     categoryField.textColor = [UIColor blackColor];
     categoryField.font = [UIFont systemFontOfSize:17.0];
-    //categoryField.placeholder = @"(Required)";  //place holder
     categoryField.backgroundColor = [UIColor whiteColor];
     categoryField.autocorrectionType = UITextAutocorrectionTypeNo;  
     categoryField.backgroundColor = [UIColor clearColor];
@@ -124,11 +127,9 @@
 	[scrollview addSubview: starLabel];
 	[starLabel release];
 	
-    //starField = [[UITextField alloc] initWithFrame:CGRectMake(110, 90, 200, 30)];
     starField.borderStyle = UITextBorderStyleRoundedRect;
     starField.textColor = [UIColor blackColor];
     starField.font = [UIFont systemFontOfSize:17.0];
-    //starField.placeholder = @"(1-5)";  //place holder
     starField.backgroundColor = [UIColor whiteColor];
     starField.autocorrectionType = UITextAutocorrectionTypeNo;  
     starField.backgroundColor = [UIColor clearColor];
@@ -142,11 +143,9 @@
 	[scrollview addSubview: remarkLabel];
 	[remarkLabel release];
 	
-	//remarkField = [[UITextField alloc] initWithFrame:CGRectMake(110, 130, 200, 30 )];
-    remarkField.borderStyle = UITextBorderStyleRoundedRect;
+	remarkField.borderStyle = UITextBorderStyleRoundedRect;
     remarkField.textColor = [UIColor blackColor];
     remarkField.font = [UIFont systemFontOfSize:17.0];
-    //remarkField.placeholder = @"Remarks";  //place holder
     remarkField.backgroundColor = [UIColor whiteColor];
     remarkField.autocorrectionType = UITextAutocorrectionTypeNo;  
     remarkField.backgroundColor = [UIColor clearColor];
@@ -160,11 +159,9 @@
 	[scrollview addSubview:address1Label];
 	[address1Label release];
 	
-	//address1Field = [[UITextField alloc] initWithFrame:CGRectMake(110, 170, 200, 30 )];
-    address1Field.borderStyle = UITextBorderStyleRoundedRect;
+	address1Field.borderStyle = UITextBorderStyleRoundedRect;
     address1Field.textColor = [UIColor blackColor];
     address1Field.font = [UIFont systemFontOfSize:17.0];
-    //address1Field.placeholder = @"(Required)";  //place holder
     address1Field.backgroundColor = [UIColor whiteColor];
     address1Field.autocorrectionType = UITextAutocorrectionTypeNo;  
     address1Field.backgroundColor = [UIColor clearColor];
@@ -179,8 +176,7 @@
 	[scrollview addSubview:address2Label];
 	[address2Label release];
 	
-	//address2Field = [[UITextField alloc] initWithFrame:CGRectMake(110, 210, 200, 30 )];
-    address2Field.borderStyle = UITextBorderStyleRoundedRect;
+	address2Field.borderStyle = UITextBorderStyleRoundedRect;
     address2Field.textColor = [UIColor blackColor];
     address2Field.font = [UIFont systemFontOfSize:17.0];
     address2Field.backgroundColor = [UIColor whiteColor];
@@ -196,11 +192,9 @@
 	[scrollview addSubview:cityLabel];
 	[cityLabel release];
 	
-	//cityField = [[UITextField alloc] initWithFrame:CGRectMake(110, 250, 200, 30 )];
-    cityField.borderStyle = UITextBorderStyleRoundedRect;
+	cityField.borderStyle = UITextBorderStyleRoundedRect;
     cityField.textColor = [UIColor blackColor];
     cityField.font = [UIFont systemFontOfSize:17.0];
-    //cityField.placeholder = @"City";  //place holder
     cityField.backgroundColor = [UIColor whiteColor];
     cityField.autocorrectionType = UITextAutocorrectionTypeNo;  
     cityField.backgroundColor = [UIColor clearColor];
@@ -211,15 +205,12 @@
     
 	UILabel *stateLabel = [[UILabel alloc]initWithFrame: CGRectMake(10, 290, 100, 30)];
 	stateLabel.text = @"State";
-	//[self.view addSubview:stateLabel];
 	[scrollview addSubview: stateLabel];
 	[stateLabel release];
 	
-	//stateField = [[UITextField alloc] initWithFrame:CGRectMake(110, 290, 200, 30 )];
-    stateField.borderStyle = UITextBorderStyleRoundedRect;
+	stateField.borderStyle = UITextBorderStyleRoundedRect;
     stateField.textColor = [UIColor blackColor];
     stateField.font = [UIFont systemFontOfSize:17.0];
-    //stateField.placeholder = @"State";  //place holder
     stateField.backgroundColor = [UIColor whiteColor];
     stateField.autocorrectionType = UITextAutocorrectionTypeNo;  
     stateField.backgroundColor = [UIColor clearColor];
@@ -234,11 +225,9 @@
 	[scrollview addSubview:zipLabel];
 	[zipLabel release];
 	
-    //zipField = [[UITextField alloc] initWithFrame:CGRectMake(110, 330, 200, 30)];
     zipField.borderStyle = UITextBorderStyleRoundedRect;
     zipField.textColor = [UIColor blackColor];
     zipField.font = [UIFont systemFontOfSize:17.0];
-    //zipField.placeholder = @"Zip";  //place holder
     zipField.backgroundColor = [UIColor whiteColor];
     zipField.autocorrectionType = UITextAutocorrectionTypeNo;  
     zipField.backgroundColor = [UIColor clearColor];
@@ -252,8 +241,18 @@
 	[scrollview addSubview:coordinate];
 	[coordinate release];
 	
-	coordinatesField = [[UILabel alloc]initWithFrame: CGRectMake(110, 370, 200, 30)];
+	/*coordinatesField = [[UILabel alloc]initWithFrame: CGRectMake(110, 370, 200, 30)];
 	coordinatesField.text = [GlobalData sharedGlobalData].newCoordinates;
+    */
+    coordinatesField.borderStyle = UITextBorderStyleRoundedRect;
+    coordinatesField.textColor = [UIColor blackColor];
+    coordinatesField.font = [UIFont systemFontOfSize:17.0];
+    coordinatesField.backgroundColor = [UIColor whiteColor];
+    coordinatesField.autocorrectionType = UITextAutocorrectionTypeNo;  
+    coordinatesField.backgroundColor = [UIColor clearColor];
+    coordinatesField.keyboardType = UIKeyboardTypeDecimalPad; 
+    coordinatesField.returnKeyType = UIReturnKeyDone; 
+    coordinatesField.delegate = self;
 	[scrollview addSubview:coordinatesField];
 	
     UIButton *route = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -269,21 +268,15 @@
     
 }
 
-
 - (void) viewWillAppear:(BOOL)animated {
 	[coordinatesField setText:[GlobalData sharedGlobalData].newCoordinates];
+    
 }
+
 #pragma mark -
 #pragma mark Custom methods
 - (void) doneAction {
-	NSLog(@"NEW RECORD DONE!");
-	
-	NSLog(@"Name: %@", nameField.text);
-	NSLog(@"Category: %@", categoryField.text);
-	NSLog(@"Location: %@", address1Field.text);
-	NSLog(@"Remark: %@", remarkField.text);
-	NSLog(@"StarRating: %@", starField.text);
-    
+
     if (([cityField.text length] == 0) && 
         ([stateField.text length] == 0) &&
         ([zipField.text length] == 0) ){
@@ -301,36 +294,74 @@
         [alertView show];
         [alertView release];
     } else {
-        NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/add.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&user_id=%@",
-                                [nameField.text encodeString:NSUTF8StringEncoding],
-                                [categoryField.text encodeString:NSUTF8StringEncoding],
-                                [starField.text encodeString:NSUTF8StringEncoding],
-                                [remarkField.text encodeString:NSUTF8StringEncoding],
-                                [address1Field.text encodeString:NSUTF8StringEncoding],
-                                [address2Field.text encodeString:NSUTF8StringEncoding],
-                                [cityField.text encodeString:NSUTF8StringEncoding],
-                                [stateField.text encodeString:NSUTF8StringEncoding],
-                                [zipField.text encodeString:NSUTF8StringEncoding],
-                                [GlobalData sharedGlobalData].newCoordinates,
-                                [NSString stringWithFormat:@"1"] ]; // THIS SHOULD BE DYNAMIC
+        // Create new entry
+        if (inputTypeTag == 1) {
+            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/add.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&user_id=%@",
+                                    [nameField.text encodeString:NSUTF8StringEncoding],
+                                    [categoryField.text encodeString:NSUTF8StringEncoding],
+                                    [starField.text encodeString:NSUTF8StringEncoding],
+                                    [remarkField.text encodeString:NSUTF8StringEncoding],
+                                    [address1Field.text encodeString:NSUTF8StringEncoding],
+                                    [address2Field.text encodeString:NSUTF8StringEncoding],
+                                    [cityField.text encodeString:NSUTF8StringEncoding],
+                                    [stateField.text encodeString:NSUTF8StringEncoding],
+                                    [zipField.text encodeString:NSUTF8StringEncoding],
+                                    [GlobalData sharedGlobalData].newCoordinates,
+                                    [NSString stringWithFormat:@"1"] ]; // THIS SHOULD BE DYNAMIC
+            
+            NSURL *url = [NSURL URLWithString:urlAddress];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+            NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            [request release]; 
+            [connection release];
+            
+        } else {
+            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/edit.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&id=%@",
+                                    [nameField.text encodeString:NSUTF8StringEncoding],
+                                    [categoryField.text encodeString:NSUTF8StringEncoding],
+                                    [starField.text encodeString:NSUTF8StringEncoding],
+                                    [remarkField.text encodeString:NSUTF8StringEncoding],
+                                    [address1Field.text encodeString:NSUTF8StringEncoding],
+                                    [address2Field.text encodeString:NSUTF8StringEncoding],
+                                    [cityField.text encodeString:NSUTF8StringEncoding],
+                                    [stateField.text encodeString:NSUTF8StringEncoding],
+                                    [zipField.text encodeString:NSUTF8StringEncoding],
+                                    [GlobalData sharedGlobalData].newCoordinates,
+                                    recordId]; // THIS SHOULD BE DYNAMIC
+            
+            NSLog(@"%@",urlAddress);
+            NSURL *url = [NSURL URLWithString:urlAddress];
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+            NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            [request release]; 
+            [connection release];
+            
+        }
         
-        NSURL *url = [NSURL URLWithString:urlAddress];
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        
-        [request release]; 
-        [connection release];
     }
 	
     
     
 }
 - (void) getCoordinatesMethod: (id) button {
-	
+	NSLog(@"input type %d", inputTypeTag);
 	NSLog(@"button is pressed");
-	NewCoordinateViewController *aController = [[NewCoordinateViewController alloc] init];
-	[self.navigationController pushViewController:aController animated:YES];
-	[aController release];
+	
+    
+    // Create new entry
+    if (inputTypeTag == 1) {
+        NewCoordinateViewController *aController = [[NewCoordinateViewController alloc] init];
+        [self.navigationController pushViewController:aController animated:YES];
+        [aController release];
+        
+    } else {
+        EditCoordinateViewController *aController = [[EditCoordinateViewController alloc]init];
+        [self.navigationController pushViewController:aController animated:YES];
+        [aController release];
+        
+    }
 }
 
 
@@ -346,8 +377,13 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 	[[self.navigationController topViewController] viewWillAppear: YES];
-
-	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:@"New Record Added" delegate:self  cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    NSString *message;
+    if (inputTypeTag == 1) {
+        message = [NSString stringWithFormat:@"New Recorded Added"];
+    } else {
+        message = [NSString stringWithFormat:@"Record Updated"];
+    }
+	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:message delegate:self  cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[alertView show];
 	[alertView release];
 }	

@@ -22,6 +22,7 @@
 @synthesize zip;
 @synthesize coordinate;
 @synthesize distance;
+@synthesize recordId;
 
 - (id) getDistance {
     return distance;

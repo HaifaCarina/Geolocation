@@ -212,13 +212,13 @@
 		NSString *remark = [file objectForKey:@"remarks"];
 		NSString *starRating = [file objectForKey:@"star_rating"];
         NSString *distance = [file objectForKey:@"distance"];
-        
         NSString *address1 = [file objectForKey:@"address_1"];
         NSString *address2 = [file objectForKey:@"address_2"];
         NSString *city = [file objectForKey:@"city"];
         NSString *state = [file objectForKey:@"state"];
         NSString *zip = [file objectForKey:@"zip"];
-         
+        NSString *recordId = [file objectForKey:@"id"];
+        
         // Display non-null distance values
         if (![distance isKindOfClass:[NSNull class]]) {
             Records *record = [[Records alloc]init];
@@ -233,6 +233,7 @@
             record.city = city;
             record.state = state;
             record.zip = zip;
+            record.recordId = recordId;
             
             [records addObject: record];
             [record release];

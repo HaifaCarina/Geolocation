@@ -21,6 +21,7 @@
     NSString *zip;
     NSString *coordinate;
     NSString *distance;
+    NSString *recordId;
 }
 
 
@@ -35,6 +36,7 @@
 @property (retain) NSString *zip;
 @property (retain) NSString *coordinate;
 @property (retain) NSString *distance;
+@property (retain) NSString *recordId;
 
 - (id) getDistance;
 @end
