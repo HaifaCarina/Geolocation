@@ -10,6 +10,8 @@ $query = "UPDATE juno set name='".$_GET['name'].
 "',city= '".$_GET['city'].
 "',state= '".$_GET['state'].
 "',zip= '".$_GET['zip'].
+"',latitude= '".$_GET['latitude'].
+"',longitude= '".$_GET['longitude'].
 "',coordinates= '".$_GET['coordinates']."' where id='".$_GET['id']."'";
 //echo $query;
 

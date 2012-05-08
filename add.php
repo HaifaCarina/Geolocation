@@ -4,7 +4,7 @@ include_once("includes/database.php");
 
 
 $query = "INSERT INTO juno 
-(name,category,star_rating,remarks, address_1,address_2,city,state,zip,coordinates,user_id)
+(name,category,star_rating,remarks, address_1,address_2,city,state,zip,coordinates,latitude,longitude,user_id)
 VALUES ('".
 $_GET['name']."','".
 $_GET['category']."','".
@@ -16,6 +16,8 @@ $_GET['city']."','".
 $_GET['state']."', '".
 $_GET['zip']."','".
 $_GET['coordinates']."','".
+$_GET['latitude']."','".
+$_GET['longitude']."','".
 $_GET['user_id']."')";
 
 //echo $query;

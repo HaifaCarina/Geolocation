@@ -296,7 +296,8 @@
     } else {
         // Create new entry
         if (inputTypeTag == 1) {
-            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/add.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&user_id=%@",
+            NSArray *coordsArray = [coordinatesField.text componentsSeparatedByString: @","];
+            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/add.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&latitude=%@&longitude=%@&user_id=%@",
                                     [nameField.text encodeString:NSUTF8StringEncoding],
                                     [categoryField.text encodeString:NSUTF8StringEncoding],
                                     [starField.text encodeString:NSUTF8StringEncoding],
@@ -307,6 +308,8 @@
                                     [stateField.text encodeString:NSUTF8StringEncoding],
                                     [zipField.text encodeString:NSUTF8StringEncoding],
                                     [coordinatesField.text encodeString:NSUTF8StringEncoding],
+                                    [[coordsArray objectAtIndex:0] encodeString:NSUTF8StringEncoding],
+                                    [[coordsArray objectAtIndex:1] encodeString:NSUTF8StringEncoding],
                                     [NSString stringWithFormat:@"1"] ]; // THIS SHOULD BE DYNAMIC
             
             NSURL *url = [NSURL URLWithString:urlAddress];
@@ -317,7 +320,8 @@
             [connection release];
             
         } else {
-            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/edit.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&id=%@",
+            NSArray *coordsArray = [coordinatesField.text componentsSeparatedByString: @","];
+            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/edit.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&latitude=%@&longitude=%@&id=%@",
                                     [nameField.text encodeString:NSUTF8StringEncoding],
                                     [categoryField.text encodeString:NSUTF8StringEncoding],
                                     [starField.text encodeString:NSUTF8StringEncoding],
@@ -328,6 +332,8 @@
                                     [stateField.text encodeString:NSUTF8StringEncoding],
                                     [zipField.text encodeString:NSUTF8StringEncoding],
                                     [coordinatesField.text encodeString:NSUTF8StringEncoding],
+                                    [[coordsArray objectAtIndex:0] encodeString:NSUTF8StringEncoding],
+                                    [[coordsArray objectAtIndex:1] encodeString:NSUTF8StringEncoding],
                                     recordId]; // THIS SHOULD BE DYNAMIC
             
             NSLog(@"%@",urlAddress);
