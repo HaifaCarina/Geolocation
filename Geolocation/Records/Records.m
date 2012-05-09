@@ -20,9 +20,11 @@
 @synthesize city;
 @synthesize state;
 @synthesize zip;
-@synthesize coordinate;
+//@synthesize coordinate;
 @synthesize distance;
 @synthesize recordId;
+@synthesize latitude;
+@synthesize longitude;
 
 - (id) getDistance {
     return distance;

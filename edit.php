@@ -12,7 +12,8 @@ $query = "UPDATE juno set name='".$_GET['name'].
 "',zip= '".$_GET['zip'].
 "',latitude= '".$_GET['latitude'].
 "',longitude= '".$_GET['longitude'].
-"',coordinates= '".$_GET['coordinates']."' where id='".$_GET['id']."'";
+//"',coordinates= '".$_GET['coordinates'].
+"' where id='".$_GET['id']."'";
 //echo $query;
 
 if ( mysql_query($query) ) {

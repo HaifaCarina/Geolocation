@@ -67,7 +67,10 @@
         zipField.text = [[inputRecord zip] isKindOfClass:[NSNull class]]?@"":[inputRecord zip];
         
         coordinatesField = [[UITextField alloc] initWithFrame:CGRectMake(110, 370, 200, 30)];
-        coordinatesField.text = [[inputRecord coordinate] isKindOfClass:[NSNull class]]?@"":[inputRecord coordinate];
+        //coordinatesField.text = [[inputRecord coordinate] isKindOfClass:[NSNull class]]?@"":[inputRecord coordinate];
+        
+        NSString *coords = [NSString stringWithFormat:@"%@,%@",[inputRecord latitude],[inputRecord longitude]];
+        coordinatesField.text = [[inputRecord latitude] isKindOfClass:[NSNull class]]?@"":coords;
         [GlobalData sharedGlobalData].newCoordinates = [(NSString*)coordinatesField.text mutableCopy];
         inputTypeTag = 2;
     }
@@ -297,21 +300,21 @@
         // Create new entry
         if (inputTypeTag == 1) {
             NSArray *coordsArray = [coordinatesField.text componentsSeparatedByString: @","];
-            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/add.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&latitude=%@&longitude=%@&user_id=%@",
-                                    [nameField.text encodeString:NSUTF8StringEncoding],
-                                    [categoryField.text encodeString:NSUTF8StringEncoding],
-                                    [starField.text encodeString:NSUTF8StringEncoding],
-                                    [remarkField.text encodeString:NSUTF8StringEncoding],
-                                    [address1Field.text encodeString:NSUTF8StringEncoding],
-                                    [address2Field.text encodeString:NSUTF8StringEncoding],
-                                    [cityField.text encodeString:NSUTF8StringEncoding],
-                                    [stateField.text encodeString:NSUTF8StringEncoding],
-                                    [zipField.text encodeString:NSUTF8StringEncoding],
-                                    [coordinatesField.text encodeString:NSUTF8StringEncoding],
-                                    [[coordsArray objectAtIndex:0] encodeString:NSUTF8StringEncoding],
-                                    [[coordsArray objectAtIndex:1] encodeString:NSUTF8StringEncoding],
-                                    [NSString stringWithFormat:@"1"] ]; // THIS SHOULD BE DYNAMIC
             
+            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/add.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&latitude=%@&longitude=%@&user_id=%@",
+                                    [nameField.text length]==0?@"":[nameField.text encodeString:NSUTF8StringEncoding],
+                                    [categoryField.text length]==0?@"":[categoryField.text encodeString:NSUTF8StringEncoding],
+                                    [starField.text length]==0?@"":[starField.text encodeString:NSUTF8StringEncoding],
+                                    [remarkField.text length]==0?@"":[remarkField.text encodeString:NSUTF8StringEncoding],
+                                    [address1Field.text length]==0?@"":[address1Field.text encodeString:NSUTF8StringEncoding],
+                                    [address2Field.text length]==0?@"":[address2Field.text encodeString:NSUTF8StringEncoding],
+                                    [cityField.text length]==0?@"":[cityField.text encodeString:NSUTF8StringEncoding],
+                                    [stateField.text length]==0?@"":[stateField.text encodeString:NSUTF8StringEncoding],
+                                    [zipField.text length]==0?@"":[zipField.text encodeString:NSUTF8StringEncoding],
+                                    [[coordsArray objectAtIndex:0] length]==0?@"":[[coordsArray objectAtIndex:0] encodeString:NSUTF8StringEncoding],
+                                    [[coordsArray objectAtIndex:0] length]==0?@"":[[coordsArray objectAtIndex:1] encodeString:NSUTF8StringEncoding],
+                                    [NSString stringWithFormat:@"1"] ]; // THIS SHOULD BE DYNAMIC
+            NSLog(@"link: %@",urlAddress);
             NSURL *url = [NSURL URLWithString:urlAddress];
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
             NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -321,7 +324,7 @@
             
         } else {
             NSArray *coordsArray = [coordinatesField.text componentsSeparatedByString: @","];
-            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/edit.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&coordinates=%@&latitude=%@&longitude=%@&id=%@",
+            NSString *urlAddress = [NSString stringWithFormat:@"http://mobile.nmgdev.com/juno/edit.php?name=%@&category=%@&star_rating=%@&remarks=%@&address_1=%@&address_2=%@&city=%@&state=%@&zip=%@&latitude=%@&longitude=%@&id=%@",
                                     [nameField.text encodeString:NSUTF8StringEncoding],
                                     [categoryField.text encodeString:NSUTF8StringEncoding],
                                     [starField.text encodeString:NSUTF8StringEncoding],
@@ -331,11 +334,10 @@
                                     [cityField.text encodeString:NSUTF8StringEncoding],
                                     [stateField.text encodeString:NSUTF8StringEncoding],
                                     [zipField.text encodeString:NSUTF8StringEncoding],
-                                    [coordinatesField.text encodeString:NSUTF8StringEncoding],
                                     [[coordsArray objectAtIndex:0] encodeString:NSUTF8StringEncoding],
                                     [[coordsArray objectAtIndex:1] encodeString:NSUTF8StringEncoding],
                                     recordId]; // THIS SHOULD BE DYNAMIC
-            
+            coordinatesField.text = coordinatesField.text;
             NSLog(@"%@",urlAddress);
             NSURL *url = [NSURL URLWithString:urlAddress];
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
@@ -358,11 +360,13 @@
     
     // Create new entry
     if (inputTypeTag == 1) {
+        
         NewCoordinateViewController *aController = [[NewCoordinateViewController alloc] init];
         [self.navigationController pushViewController:aController animated:YES];
         [aController release];
         
     } else {
+        
         EditCoordinateViewController *aController = [[EditCoordinateViewController alloc]init];
         [self.navigationController pushViewController:aController animated:YES];
         [aController release];
@@ -400,7 +404,13 @@
 	[textField resignFirstResponder];
     return YES; // Set the BOOL to YES.
 }
-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (textField == coordinatesField) {
+        return NO;
+    }
+    return YES;
+}
 #pragma mark -
 #pragma mark UIPickerView methods
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {

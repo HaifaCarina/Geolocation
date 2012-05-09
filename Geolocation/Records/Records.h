@@ -19,9 +19,11 @@
     NSString *city;
     NSString *state;
     NSString *zip;
-    NSString *coordinate;
+    //NSString *coordinate;
     NSString *distance;
     NSString *recordId;
+    NSString *latitude;
+    NSString *longitude;
 }
 
 
@@ -34,9 +36,11 @@
 @property (retain) NSString *city;
 @property (retain) NSString *state;
 @property (retain) NSString *zip;
-@property (retain) NSString *coordinate;
+//@property (retain) NSString *coordinate;
 @property (retain) NSString *distance;
 @property (retain) NSString *recordId;
+@property (retain) NSString *latitude;
+@property (retain) NSString *longitude;
 
 - (id) getDistance;
 @end

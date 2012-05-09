@@ -35,12 +35,17 @@
     
     self.title = @"Information";
 	details = [[NSMutableArray alloc]init];
-    coordinates = record.coordinate;
+    //coordinates = record.coordinate;
+    
+    NSString *coords = [NSString stringWithFormat:@"%@,%@",record.latitude,record.longitude];
+    coordinates = coords;
     
     [details addObject:record.name];
     [details addObject:record.address1];
     [details addObject:record.category];
-    [details addObject:record.coordinate];
+    //[details addObject:record.coordinate];
+    [details addObject:record.latitude];
+    [details addObject:record.longitude];
     [details addObject:record.remark];
     
 	int y = 10;

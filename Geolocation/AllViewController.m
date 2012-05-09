@@ -207,7 +207,7 @@
 	for (NSDictionary *file in files)
 	{       
 		NSString *name = [file objectForKey:@"name"];
-		NSString *coordinate = [file objectForKey:@"coordinates"];
+		//NSString *coordinate = [file objectForKey:@"coordinates"];
 		NSString *category = [file objectForKey:@"category"];
 		NSString *remark = [file objectForKey:@"remarks"];
 		NSString *starRating = [file objectForKey:@"star_rating"];
@@ -218,12 +218,14 @@
         NSString *state = [file objectForKey:@"state"];
         NSString *zip = [file objectForKey:@"zip"];
         NSString *recordId = [file objectForKey:@"id"];
+        NSString *latitude = [file objectForKey:@"latitude"];
+        NSString *longitude = [file objectForKey:@"longitude"];
         
         // Display non-null distance values
         if (![distance isKindOfClass:[NSNull class]]) {
             Records *record = [[Records alloc]init];
             record.name = name;
-            record.coordinate = coordinate;
+            //record.coordinate = coordinate;
             record.category = category;
             record.remark = remark;
             record.starRating = starRating;
@@ -234,6 +236,8 @@
             record.state = state;
             record.zip = zip;
             record.recordId = recordId;
+            record.latitude = latitude;
+            record.longitude = longitude;
             
             [records addObject: record];
             [record release];
