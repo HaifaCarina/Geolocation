@@ -150,7 +150,8 @@
 	records = [[NSMutableArray alloc]init];
 	
     // Star querying records
-	NSString *urlString = [NSString stringWithFormat: @"http://mobile.nmgdev.com/juno/data.php?sortByDistance=true&origin=%@",currentCoordinatesString];
+	NSString *urlString = [NSString stringWithFormat: @"http://mobile.nmgdev.com/juno/data2.php?sortByDistance=true&origin=%@",currentCoordinatesString];
+	//NSString *urlString = [NSString stringWithFormat: @"http://mobile.nmgdev.com/juno/data.php?sortByDistance=true&origin=%@",currentCoordinatesString];
 	NSURL *url = [NSURL URLWithString:urlString];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -201,7 +202,7 @@
 {
 	[myIndicator stopAnimating]; 
     
-    NSDictionary *filesJSON = [jsonData JSONValue];
+    NSDictionary *filesJSON = [jsonData JSONValue]; NSLog(@"%@",jsonData);
 	NSArray *files = [filesJSON objectForKey:@"files"];
     
 	for (NSDictionary *file in files)
