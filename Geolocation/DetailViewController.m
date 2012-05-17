@@ -79,8 +79,11 @@
     [self.navigationController pushViewController:aController animated:YES];
 }
 - (void) routeMethod: (id) button {
-	
-    RouteViewController *aController = [[RouteViewController alloc] initWithCoordinates:coordinates];
+	NSLog(@"%@,%@",record.latitude,record.longitude);
+    
+    //RouteViewController *aController = [[RouteViewController alloc] initWithCoordinates:coordinates];
+    NSString *coords = [NSString stringWithFormat:@"%@,%@",record.latitude,record.longitude];
+	RouteViewController *aController = [[RouteViewController alloc] initWithCoordinates:coords];
 	[self.navigationController pushViewController:aController animated:YES];
 	[aController release];
     

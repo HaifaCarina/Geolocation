@@ -17,7 +17,7 @@
 #pragma mark Life Cycle methods
 - (id) initWithCoordinates:(NSString *)inputCoordinates {
     if (self == [super init]) {
-        coordinatesString = inputCoordinates;
+        coordinatesString = [[NSString alloc]initWithFormat:@"%@",inputCoordinates]; //inputCoordinates;
         coordinatesArray = [coordinatesString componentsSeparatedByString:@","];
     }
     return(self);
@@ -44,7 +44,8 @@
 #pragma mark -
 #pragma mark Custom methods
 - (void) startRoute 
-{
+{   NSLog(@"currentCoordinatesString %@",currentCoordinatesString);
+    NSLog(@"coordinatesString %@", coordinatesString);
     // NSString *nmg = @"14.562570,121.013460"; 
 	NSString *urlString = [NSString stringWithFormat: 
 						   @"http://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=true",
@@ -58,7 +59,7 @@
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
 	[request release]; 
-	[connection release];
+	[connection release]; 
 }
 
 #pragma mark -
